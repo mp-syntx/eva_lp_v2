@@ -4,6 +4,7 @@ import { $, $$, desenharAoVer } from './lib/nucleo.js';
 import { marcarTitulos } from './lib/traco.js';
 import { formularios } from './formulario.js';
 import { abertura } from './abertura.js';
+import { problema, origem, pausa } from './secoes.js';
 
 const nav = $('.nav');
 const dl = (window.dataLayer = window.dataLayer || []);
@@ -114,3 +115,8 @@ formularios();
 
 /* ---------- S02 · boas-vindas em vídeo com a jornada ---------- */
 abertura();
+
+/* ---------- T012 · S03, S08, S04 ---------- */
+problema();
+origem();
+pausa();

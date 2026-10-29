@@ -113,9 +113,16 @@
     <div class="secao__topo"><p class="tag">Por que importa</p>
       <h2 id="problema-titulo">A maternidade não afasta mulheres do trabalho. <b>A falta de apoio, sim.</b></h2></div>
     <div class="dados">
-      <div class="dado dado--destaque"><strong>65%</strong><p>das saídas, entre as mães que deixaram o emprego, acontecem no primeiro ano depois da licença</p></div>
-      <div class="dado"><strong>69%</strong><p>não se sentiam emocionalmente prontas para voltar ao trabalho depois da licença</p></div>
-      <div class="dado"><strong>97,5%</strong><p>ficariam mais tempo numa empresa que apoiasse de verdade mães que trabalham</p></div>
+      <figure class="grafico">
+        <div class="grafico__numero"><strong>65%</strong><svg class="grafico__circulo" viewBox="0 0 220 120" aria-hidden="true"></svg></div>
+        <figcaption class="grafico__legenda">das saídas, entre as mães que deixaram o emprego, acontecem no <b>primeiro ano depois da licença</b></figcaption>
+        <svg class="grafico__svg" viewBox="0 100 640 256" role="img" aria-label="Gráfico ilustrativo: as saídas se concentram nos primeiros meses depois da licença"><g id="grafico-ano"></g><text x="20" y="352" class="gb-rotulo gb-rotulo--eixo">meses depois da volta</text></svg>
+        <span class="grafico__aviso">ilustrativo</span>
+      </figure>
+      <div class="arcos">
+        <div class="arco" data-valor="69"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="arco__fundo" cx="60" cy="60" r="52"/><circle class="arco__valor" cx="60" cy="60" r="52" pathLength="1"/></svg><div><strong data-conta="69" data-sufixo="%">69%</strong><p>não se sentiam emocionalmente prontas para voltar ao trabalho depois da licença</p></div></div>
+        <div class="arco" data-valor="97,5"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="arco__fundo" cx="60" cy="60" r="52"/><circle class="arco__valor" cx="60" cy="60" r="52" pathLength="1"/></svg><div><strong data-conta="97.5" data-sufixo="%">97,5%</strong><p>ficariam mais tempo numa empresa que apoiasse de verdade mães que trabalham</p></div></div>
+      </div>
     </div>
     <p class="dados__fecho">A data de volta é administrativa. <b>A prontidão, não.</b></p>
     <p class="fonte">Pesquisa Executive Moms com 479 mães trabalhadoras. Intenção declarada; não representa retenção observada.</p>
@@ -126,28 +133,45 @@
 <section class="secao secao--creme" id="origem" aria-labelledby="origem-titulo">
   <div class="wrap origem">
     <figure class="origem__video">
-      <div class="origem__moldura"><img src="assets/video/manifesto-poster.webp" alt="" width="540" height="960" loading="lazy"><span class="origem__play" aria-hidden="true"></span></div>
+      <div class="origem__moldura">
+        <img src="assets/video/manifesto-poster.webp" alt="" width="540" height="960" loading="lazy">
+        <video class="origem__previa" muted playsinline loop preload="none" data-src="assets/video/manifesto-previa.mp4" aria-hidden="true"></video>
+        <button class="origem__play" type="button" data-video="assets/video/manifesto-540.mp4" data-poster="assets/video/manifesto-poster.webp" aria-label="Assistir: Mariana Rios conta como nasceu a Eva Maternidade, 3 minutos, com som"></button>
+      </div>
       <figcaption>Mariana Rios conta como nasceu a Eva Maternidade · 3 min</figcaption>
+      <details class="origem__transcricao"><summary>Ler a transcrição</summary>
+        <p>Mas então, de onde nasceu a Eva Maternidade? Da minha história. Das que chegaram até mim depois que eu sofri um aborto espontâneo em 2020 e eu resolvi falar sobre o que ninguém falava. Das milhares de mulheres que se reconheceram naquela dor e começaram a compartilhar. Das dúvidas de quem atravessa tratamentos e mais tratamentos. Das perdas vividas em silêncio. Das gestantes que buscam conciliar tantas transformações com o trabalho. Das puérperas tentando se reconhecer novamente. Das mães retornando à rotina profissional sem estrutura suficiente.</p>
+        <p>Nasce da ansiedade antes de um exame. Da espera por um resultado. Da dificuldade de falar sobre fertilidade no trabalho. Da culpa que aparece no retorno, como se nada tivesse mudado, mas tudo mudou. A Eva Maternidade nasce porque entendemos que essa é uma jornada, não uma coletânea de fases e marcos.</p>
+        <p>É o processo de transformação mais intenso na vida de uma mulher, e impacta todos os aspectos da vida. Ela atravessa o corpo, a saúde, a identidade, os vínculos, a rotina e a carreira. E em cada etapa existe uma mulher tentando entender o que sente, o que precisa, o que mudou e como seguir. E a transformação acontece dentro da vida profissional, não apenas fora do escritório.</p>
+        <p>O Basta Sentir Maternidade, que começou com uma comunidade de acolhimento, cresceu porque a necessidade era maior. Era preciso transformar escuta em estrutura. Rede em continuidade, cuidado em acompanhamento e apoio em cultura. E eu entendi que sozinha a vivência não bastava, precisava ampliar o cuidado com saúde e tecnologia.</p>
+        <p>A Eva Maternidade se tornou o encontro de duas forças: de um lado, a experiência de quem viveu; do outro, a capacidade de transformar escuta em serviço real dentro das empresas. Eu acredito que apoio à maternidade é cuidar da permanência, da saúde, da confiança, do pertencimento. Do futuro de uma mulher que não deveria precisar escolher entre se transformar e continuar crescendo.</p>
+        <p>Por isso, a Eva Maternidade é mais do que uma solução. É um convite pra que organizações, RHs e líderes parem de enxergar a maternidade como uma pausa e passem a tratá-la como potência. Conheça a Eva Maternidade e venha transformar a cultura do cuidado com a gente.</p>
+        <p><span class="pendente">transcrição aproximada, a revisar com o áudio</span></p>
+      </details>
     </figure>
     <div class="origem__texto">
       <p class="tag">Nossa origem</p>
       <h2 id="origem-titulo" data-traco>Cuidar das mulheres na jornada da maternidade é <b>fortalecer o vínculo, a confiança e a <span class="mk" data-mk="sublinhado">cultura</span> da sua empresa.</b></h2>
-      <p class="fonte">Da base clínica da Eva Saúde e da comunidade do Basta Sentir.</p>
+      <p class="origem__base">Da base clínica da Eva Saúde e da comunidade do Basta Sentir.</p>
     </div>
   </div>
 </section>
 
 <!-- S04 · Pausa × jornada -->
-<section class="secao" id="pausa" aria-labelledby="pausa-titulo">
+<section class="secao secao--pausa" id="pausa" aria-labelledby="pausa-titulo">
   <div class="wrap">
     <div class="secao__topo"><h2 id="pausa-titulo">Não é só uma fase. <b>É uma transformação que precisa de cuidado.</b></h2>
       <p class="lead">A maternidade não acontece separada da vida. Atravessa a saúde, a rotina, as relações, a identidade e também o trabalho.</p></div>
-    <div class="pausa">
+  </div>
+  <div class="sobre">
+    <div class="sobre-fixo pausa">
       <div class="pausa__cartao pausa__cartao--pausa"><h3>Quando a maternidade é tratada como pausa</h3>
         <ul><li>Apoio começa na licença e termina na volta</li><li>Tentativa de engravidar e perda ficam invisíveis</li><li>Cada fase resolvida com uma ação isolada</li><li>A colaboradora volta sozinha</li></ul></div>
       <div class="pausa__cartao pausa__cartao--jornada"><h3>Quando é tratada como jornada</h3>
         <ul><li>Cuidado da tentativa ao primeiro ano depois da volta</li><li>Inclusive na perda gestacional</li><li>Acompanhamento contínuo, no ritmo de cada fase</li><li>O RH acompanha o agregado, com privacidade</li></ul></div>
     </div>
+  </div>
+  <div class="wrap">
     <p class="pausa__fecho">Ações pontuais acolhem momentos. <b>Jornadas contínuas exigem estrutura.</b></p>
   </div>
 </section>

@@ -145,3 +145,70 @@
   .objetivos { grid-template-columns: 1fr 1fr; }
   .rh__painel { min-height: 260px; }
 }
+
+/* ---------- T012 · S03 gráfico e arcos ---------- */
+.dados { grid-template-columns: 2fr 1fr; align-items: stretch; }
+.grafico { position: relative; margin: 0; background: #fff; border-radius: var(--eva-raio-banner); padding: clamp(24px, 3vw, 40px); box-shadow: var(--eva-sombra); display: grid; grid-template-columns: auto 1fr; gap: 8px 28px; align-items: center; }
+.grafico__numero { position: relative; display: inline-block; justify-self: start; padding: 8px 18px; }
+.grafico__numero strong { font-size: clamp(3.4rem, 6vw, 5rem); font-weight: 600; line-height: 1; letter-spacing: -.03em; color: var(--eva-magenta-forte); }
+.grafico__circulo { position: absolute; inset: -14px -18px; width: calc(100% + 36px); height: calc(100% + 28px); overflow: visible; pointer-events: none; }
+.grafico__numero:not(.draw) .tr { stroke-dashoffset: 1; }
+.grafico__legenda { font-size: 17px; max-width: 30ch; }
+.grafico__legenda b { font-weight: 600; }
+.grafico__svg { grid-column: 1 / -1; width: 100%; height: auto; margin-top: 16px; overflow: visible; --gb-fraco: var(--eva-azul-suave); }
+.grafico__svg .gb-bloco.forte { fill: var(--eva-magenta); }
+.grafico__svg:not(.vai) .gb-curva { stroke-dashoffset: 0; }
+.gb-rotulo { font: 500 13px var(--eva-fonte); fill: var(--eva-texto-suave); }
+.gb-rotulo--eixo { font-size: 12px; }
+.grafico__aviso { position: absolute; top: 20px; right: 24px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--eva-texto-suave); background: var(--eva-fundo); border-radius: 20px; padding: 3px 10px; }
+.arcos { display: grid; gap: 20px; }
+.arco { display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: center; background: #fff; border-radius: var(--eva-raio-banner); padding: 24px; box-shadow: var(--eva-sombra); }
+.arco svg { width: 96px; height: 96px; transform: rotate(-90deg); }
+.arco__fundo, .arco__valor { fill: none; stroke-width: 10; }
+.arco__fundo { stroke: var(--eva-fundo); }
+.arco__valor { stroke: var(--eva-magenta-forte); stroke-linecap: round; stroke-dasharray: 1 1; stroke-dashoffset: calc(1 - var(--v, 0)); }
+.arco:not(.vai) .arco__valor { stroke-dashoffset: 1; }
+.arco.vai .arco__valor { transition: stroke-dashoffset 1.5s cubic-bezier(.33, 1, .68, 1); }
+.arco strong { display: block; font-size: clamp(2.2rem, 3.4vw, 2.8rem); font-weight: 600; line-height: 1; letter-spacing: -.03em; color: var(--eva-magenta-forte); margin-bottom: 8px; }
+.arco p { font-size: 15px; color: var(--eva-texto-suave); }
+.dados .dado { display: none; }
+
+/* ---------- T012 · S08 vídeo ---------- */
+.origem__moldura video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.origem__previa { pointer-events: none; }
+.origem__play { border: 0; cursor: pointer; z-index: 2; transition: transform .3s var(--eva-mola), background .3s; }
+.origem__play:hover { transform: scale(1.06); background: rgba(255, 255, 255, .38); }
+.origem__video.is-tocando .origem__play, .origem__video.is-tocando .origem__previa { display: none; }
+.origem__video.is-tocando .origem__moldura { transform: none; }
+.origem__completo { z-index: 3; background: #000; object-fit: contain !important; }
+.origem__base { font-size: 15px; color: var(--eva-texto-suave); }
+.origem__transcricao { margin-top: 8px; font-size: 14px; }
+.origem__transcricao summary { cursor: pointer; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.origem__transcricao p { margin-top: 10px; color: var(--eva-texto-suave); line-height: 1.6; }
+
+/* ---------- T012 · S04 sobreposição ---------- */
+.secao--pausa { padding-bottom: 0; }
+.secao--pausa .secao__topo { margin-bottom: 0; }
+.sobre { height: 260vh; }
+.sobre-fixo.pausa { display: flex; grid-template-columns: none; gap: 24px; }
+.pausa__cartao { width: min(520px, 42vw); flex: none; box-shadow: var(--eva-sombra); }
+.pausa__cartao ul { list-style: none; padding: 0; }
+.pausa__cartao li { position: relative; padding-left: 28px; }
+.pausa__cartao--pausa li::before { content: "×"; position: absolute; left: 4px; top: -1px; color: var(--eva-texto-suave); font-weight: 600; }
+.pausa__cartao--jornada li::before { content: ""; position: absolute; left: 2px; top: 8px; width: 12px; height: 7px; border-left: 2.5px solid var(--eva-magenta-forte); border-bottom: 2.5px solid var(--eva-magenta-forte); transform: rotate(-45deg); }
+.pausa__cartao--jornada { position: relative; z-index: 2; box-shadow: var(--eva-sombra-alta); }
+.pausa__cartao--jornada h3 { position: relative; display: inline-block; }
+.pausa__circulo { position: absolute; overflow: visible; pointer-events: none; }
+.pausa__cartao--jornada h3:not(.draw) .tr { stroke-dashoffset: 1; }
+.pausa__fecho { margin: 0 0 clamp(72px, 10vw, 128px); opacity: 0; transform: translateY(12px); transition: opacity .6s var(--eva-curva), transform .6s var(--eva-curva); text-align: center; }
+.pausa__fecho.on { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .dados { grid-template-columns: 1fr; }
+  .grafico { grid-template-columns: 1fr; }
+  .grafico__aviso { top: 14px; right: 14px; }
+  .pausa__cartao { width: 100%; }
+  .sobre-fixo.pausa { padding: 32px var(--gutter) 0; gap: 16px; }
+  .pausa__fecho { margin-top: 32px; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) { .pausa__fecho { opacity: 1; transform: none; } }

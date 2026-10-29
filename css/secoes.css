@@ -361,3 +361,26 @@
 .painel__area { min-height: 470px; }
 @media (max-width: 900px) { .painel__area { min-height: 500px; } }
 .painel__menu { position: relative; }
+
+/* ---------- T017 · S09, S10, S11, objetivos ---------- */
+.passos { position: relative; }
+.passos li { position: relative; }
+.passos li::before { position: absolute; top: clamp(24px, 3vw, 32px); right: clamp(24px, 3vw, 32px); margin: 0; width: 32px; height: 32px; font-size: 14px; }
+.passo__ic { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--eva-grad-rosa-pessego); color: var(--eva-magenta); margin-bottom: 20px; }
+.passo__ic svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.passos li:nth-child(2) .passo__ic { background: var(--eva-grad-azul-claro); color: var(--eva-acento-texto); }
+.passos li:nth-child(3) .passo__ic { background: var(--eva-grad-salvia); color: var(--eva-verde); }
+.passos li:not(:last-child)::after { content: ""; position: absolute; top: 56px; right: -20px; width: 20px; border-top: 2px dashed var(--eva-azul); }
+[data-entra] > * { opacity: 0; transform: translateY(14px); transition: opacity .5s var(--eva-curva), transform .5s var(--eva-curva); }
+[data-entra].entrou > * { opacity: 1; transform: none; }
+[data-entra].entrou > :nth-child(2) { transition-delay: .08s; } [data-entra].entrou > :nth-child(3) { transition-delay: .16s; } [data-entra].entrou > :nth-child(4) { transition-delay: .24s; } [data-entra].entrou > :nth-child(5) { transition-delay: .32s; } [data-entra].entrou > :nth-child(6) { transition-delay: .4s; }
+@media (prefers-reduced-motion: reduce) { [data-entra] > * { opacity: 1; transform: none; } }
+.objetivos li { display: grid; gap: 6px; align-content: start; }
+.objetivos b { font-weight: 600; font-size: 15px; }
+.objetivos li > span { font-weight: 400; font-size: 13px; color: var(--eva-texto-suave); line-height: 1.4; }
+.duvidas__fecho { margin-top: 28px; color: var(--eva-texto-suave); display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.duvidas__fecho a { color: var(--eva-texto); }
+.duvidas details[open] summary { color: var(--eva-magenta); }
+.duvidas details p { animation: msg-abre .35s var(--eva-curva) both; }
+@keyframes msg-abre { from { opacity: 0; transform: translateY(-4px) } to { opacity: 1; transform: none } }
+@media (max-width: 900px) { .passos li:not(:last-child)::after { display: none; } }

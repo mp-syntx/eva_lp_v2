@@ -1,6 +1,6 @@
 // LP Eva Maternidade v2 · base (T010): navegação, menu Jornadas, gaveta, barra móvel, CTA ao formulário mais próximo,
 // medição dos links de aprofundamento, traço de caneta nos títulos e formulários.
-import { $, $$, desenharAoVer } from './lib/nucleo.js';
+import { $, $$, desenharAoVer, aoVer } from './lib/nucleo.js';
 import { marcarTitulos } from './lib/traco.js';
 import { formularios } from './formulario.js';
 import { abertura } from './abertura.js';
@@ -132,3 +132,6 @@ emAcao();
 
 /* ---------- T015 · S07 painel do RH ---------- */
 painel();
+
+/* ---------- T017 · entradas em sequência (passos, objetivos) ---------- */
+$$('[data-entra]').forEach(l => aoVer(l, () => l.classList.add('entrou'), .3));

@@ -22,6 +22,8 @@ p { margin: 0; }
 .wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
 .secao { position: relative; padding: clamp(72px, 10vw, 128px) 0; }
 .secao--fundo { background: var(--eva-fundo); }
+/* seções abaixo da dobra só calculam layout quando chegam perto da tela */
+main > .secao:not(.secao--jornada):not(.secao--pausa) { content-visibility: auto; contain-intrinsic-size: auto 1000px; }
 .secao--creme { background: var(--eva-creme); }
 .secao__topo { display: grid; gap: 16px; margin-bottom: clamp(32px, 5vw, 56px); }
 .secao__topo .tag { margin: 0; }
@@ -78,7 +80,7 @@ p { margin: 0; }
 .rodape__grade { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; }
 .rodape__marca img { width: 150px; height: auto; margin-bottom: 16px; }
 .rodape__marca p { color: rgba(255, 255, 255, .78); max-width: 32ch; margin-bottom: 24px; }
-.rodape h2 { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--eva-azul); margin-bottom: 16px; }
+.rodape h2 { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--eva-azul-suave); margin-bottom: 16px; }
 .rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .rodape__guia small { display: block; color: rgba(255, 255, 255, .7); font-size: 13px; }
 .rodape__guia a { font-weight: 600; text-decoration: none; }

@@ -1,4 +1,6 @@
 /* Tema Eva: tokens do app (conhecimento/app-eva/tokens.md) e ponte para as variáveis da biblioteca. */
+/* Fonte de reserva com as métricas da Poppins: evita o salto de layout quando a fonte carrega. */
+@font-face { font-family: 'Poppins Reserva'; src: local('Arial'); size-adjust: 113.1%; ascent-override: 92.8%; descent-override: 30.9%; line-gap-override: 8.8%; }
 :root {
   /* cores do app */
   --eva-texto: #0E2433;
@@ -38,7 +40,7 @@
   --eva-mola: cubic-bezier(.3, 1.35, .5, 1);
 
   /* tipografia */
-  --eva-fonte: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --eva-fonte: 'Poppins', 'Poppins Reserva', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --eva-h1: clamp(2.6rem, 5.4vw, 4.8rem);
   --eva-h2: clamp(2rem, 4vw, 3.4rem);
 
@@ -58,6 +60,6 @@
   --texto-sec: var(--eva-texto-suave);
   --linha: var(--eva-borda);
   --linha2: var(--eva-azul-neutro);
-  --tag: var(--eva-magenta);
+  --tag: #B8174F; /* magenta escurecido para textos pequenos em fundo claro (contraste AA) */
 }
 @media (max-width: 900px) { :root { --nav-h: 60px; } }

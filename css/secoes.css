@@ -219,9 +219,10 @@
 .jor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); }
 .jor-passos { list-style: none; margin: 0; padding: 0; }
 .jor-cap { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; gap: 14px; opacity: .3; transition: opacity .45s var(--eva-curva); max-width: 46ch; }
+.jor-cap:not(.on) { opacity: .45; }
 .jor-cap.on { opacity: 1; }
 .jor-cap:first-child { min-height: 70vh; }
-.jor-fase { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--eva-magenta); }
+.jor-fase { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tag); }
 .jor-fase img { width: 40px; height: 40px; border-radius: 50%; background: #fff; }
 .jor-cap h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; letter-spacing: -.02em; line-height: 1.1; }
 .jor-cap > p:not(.jor-fase):not(.fonte):not(.aprofundar) { font-size: 18px; color: var(--eva-texto-suave); }

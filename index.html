@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/biblioteca.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/secoes.css">
+<link rel="preload" as="image" href="assets/video/abertura-poster.webp">
 <script type="module" src="js/main.js"></script>
 </head>
 <body>
@@ -83,7 +84,23 @@
         <a class="btn abertura__cta-cel" href="#fale" data-origem="abertura-celular">Agendar conversa</a>
       </div>
       <div class="abertura__cel" aria-hidden="true">
-        <div class="cel-moldura"><img src="assets/img/boas-vindas-poster.webp" alt="" width="540" height="960"></div>
+        <div class="cel-moldura">
+          <div class="app-bv">
+            <video muted playsinline loop preload="none" poster="assets/video/abertura-poster.webp" data-src="assets/video/abertura.mp4" width="540" height="960"></video>
+            <div class="app-bv__topo">
+              <div class="app-bv__status"><span>9:41</span><svg viewBox="0 0 54 12" width="54" height="12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 5h2v6H9zM13 3h2v8h-2z" fill="#fff"/><path d="M24 4.5a7 7 0 0 1 9.5 0M26 6.8a4 4 0 0 1 5.4 0M28.7 9.2l.1-.1" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/><rect x="38.5" y="2" width="12" height="8" rx="2" stroke="#fff" fill="none"/><rect x="40" y="3.5" width="8" height="5" rx="1" fill="#fff"/></svg></div>
+              <div class="app-bv__barra"><span class="app-bv__seg"></span><span class="app-bv__seg"></span><span class="app-bv__seg"></span><span class="app-bv__seg"></span><span class="app-bv__seg"></span></div>
+              <img class="app-bv__logo" src="assets/marcas/logo-eva-claro.svg" alt="" width="110" height="22">
+            </div>
+            <div class="app-bv__cartoes">
+            <div class="app-bv__cartao"><img src="assets/img/fase-tentante.webp" alt="" width="40" height="40"><div><p class="app-bv__nome">Tentando engravidar</p><p class="app-bv__linha">Orientação desde o planejamento</p></div></div>
+            <div class="app-bv__cartao"><img src="assets/img/fase-gestante.webp" alt="" width="40" height="40"><div><p class="app-bv__nome">Gestação</p><p class="app-bv__linha">Semana a semana, com especialistas</p></div></div>
+            <div class="app-bv__cartao"><img src="assets/img/fase-puerpera.webp" alt="" width="40" height="40"><div><p class="app-bv__nome">Pós-parto</p><p class="app-bv__linha">Acolhimento para a nova rotina</p></div></div>
+            <div class="app-bv__cartao"><img src="assets/img/fase-pos-licenca.webp" alt="" width="40" height="40"><div><p class="app-bv__nome">Volta ao trabalho</p><p class="app-bv__linha">Preparação e o primeiro ano</p></div></div>
+            <div class="app-bv__cartao"><img src="assets/img/fase-mae-de-anjo.webp" alt="" width="40" height="40"><div><p class="app-bv__nome">E também na perda</p><p class="app-bv__linha">Acolhimento no tempo de cada mulher</p></div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="abertura__form" data-form-slot="abertura"></div>
@@ -109,7 +126,7 @@
 <section class="secao secao--creme" id="origem" aria-labelledby="origem-titulo">
   <div class="wrap origem">
     <figure class="origem__video">
-      <div class="origem__moldura"><img src="assets/img/boas-vindas-poster.webp" alt="" width="540" height="960" loading="lazy"><span class="origem__play" aria-hidden="true"></span></div>
+      <div class="origem__moldura"><img src="assets/video/manifesto-poster.webp" alt="" width="540" height="960" loading="lazy"><span class="origem__play" aria-hidden="true"></span></div>
       <figcaption>Mariana Rios conta como nasceu a Eva Maternidade · 3 min</figcaption>
     </figure>
     <div class="origem__texto">

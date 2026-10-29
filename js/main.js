@@ -3,6 +3,7 @@
 import { $, $$, desenharAoVer } from './lib/nucleo.js';
 import { marcarTitulos } from './lib/traco.js';
 import { formularios } from './formulario.js';
+import { abertura } from './abertura.js';
 
 const nav = $('.nav');
 const dl = (window.dataLayer = window.dataLayer || []);
@@ -110,3 +111,6 @@ $$('[data-traco]').forEach(desenharAoVer);
 
 /* ---------- formulários ---------- */
 formularios();
+
+/* ---------- S02 · boas-vindas em vídeo com a jornada ---------- */
+abertura();

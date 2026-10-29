@@ -11,7 +11,31 @@
 .abertura__cel { position: relative; width: clamp(210px, 16vw, 240px); align-self: end; }
 .abertura__cel::before { content: ""; position: absolute; left: 50%; top: 18%; width: 150%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: var(--eva-grad-rosa-pessego); z-index: 0; }
 .cel-moldura { position: relative; z-index: 1; height: clamp(380px, 52vh, 520px); overflow: hidden; border: 8px solid var(--eva-texto); border-bottom: 0; border-radius: 40px 40px 0 0; background: #000; box-shadow: var(--eva-sombra-alta); }
-.cel-moldura img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+/* tela de boas-vindas em vídeo (Figma 596:2199) com a jornada por cima */
+.app-bv { position: absolute; inset: 0; overflow: hidden; border-radius: 32px 32px 0 0; background: #2a2622 url("../assets/video/abertura-poster.webp") center top / cover; color: #fff; }
+.app-bv video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.app-bv::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 55%, rgba(0,0,0,.45) 100%); pointer-events: none; }
+.app-bv__topo { position: absolute; z-index: 2; inset: 0 0 auto; padding: 10px 16px 0; display: grid; gap: 8px; justify-items: center; }
+.app-bv__status { width: 100%; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 600; padding: 0 6px; }
+.app-bv__barra { width: 100%; display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.app-bv__seg { position: relative; height: 3px; border-radius: 3px; background: rgba(255,255,255,.35); overflow: hidden; }
+.app-bv__seg::after { content: ""; position: absolute; inset: 0; background: #fff; transform: scaleX(var(--p, 0)); transform-origin: left; }
+.app-bv__logo { width: 96px; height: auto; margin-top: 4px; }
+.app-bv__cartoes { position: absolute; z-index: 2; left: 12px; right: 12px; bottom: 22px; }
+.app-bv__cartao { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; padding: 12px 14px; border-radius: 18px; background: rgba(255,255,255,.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); opacity: 0; transform: translateY(16px); transition: opacity .5s var(--eva-curva), transform .5s var(--eva-mola); }
+.app-bv__cartao.on { opacity: 1; transform: none; }
+.app-bv__cartao img { width: 40px; height: 40px; border-radius: 50%; background: #fff; padding: 3px; }
+.app-bv__nome { font-weight: 600; font-size: 15px; line-height: 1.2; }
+.app-bv__traco { display: block; margin: 1px 0 2px -2px; overflow: visible; }
+.app-bv__traco .tr { stroke: #FF8FB8; }
+.app-bv__cartao:not(.draw) .app-bv__traco .tr { stroke-dashoffset: 1; }
+.app-bv__linha { font-size: 12px; line-height: 1.35; opacity: .92; }
+/* reduced-motion: lista estática das fases */
+.app-bv.is-estatico .app-bv__seg { --p: 1; }
+.app-bv.is-estatico .app-bv__cartoes { display: grid; gap: 6px; position: absolute; }
+.app-bv.is-estatico .app-bv__cartao { position: static; opacity: 1; transform: none; padding: 6px 10px; grid-template-columns: 28px 1fr; }
+.app-bv.is-estatico .app-bv__cartao img { width: 28px; height: 28px; }
+.app-bv.is-estatico .app-bv__linha, .app-bv.is-estatico .app-bv__traco { display: none; }
 .abertura__form { padding-bottom: clamp(32px, 5vw, 64px); }
 
 /* ---------- S03 · Problema ---------- */

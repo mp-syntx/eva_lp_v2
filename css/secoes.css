@@ -1,0 +1,123 @@
+/* Seções da LP. T010 entrega a forma base de cada uma; as tasks T011–T017 aprofundam (demonstração, motion). */
+
+/* ---------- S02 · Abertura ---------- */
+.abertura { position: relative; padding-top: calc(var(--nav-h) + clamp(24px, 4vw, 56px)); overflow: hidden; background: linear-gradient(180deg, #fff 0%, var(--eva-fundo) 100%); }
+.abertura__grade { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: clamp(28px, 4vw, 56px); align-items: start; }
+.abertura__bloco { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(20px, 3vw, 40px); align-items: end; min-height: min(640px, calc(100vh - var(--nav-h) - 40px)); }
+.abertura__texto { display: grid; gap: 20px; align-content: start; justify-items: start; padding-bottom: clamp(48px, 7vw, 96px); align-self: center; }
+.abertura__texto .tag { margin: 0; }
+.abertura__texto h1 { font-size: clamp(2.4rem, 3.6vw, 3.5rem); }
+.abertura__cta-cel { display: none; }
+.abertura__cel { position: relative; width: clamp(210px, 16vw, 240px); align-self: end; }
+.abertura__cel::before { content: ""; position: absolute; left: 50%; top: 18%; width: 150%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: var(--eva-grad-rosa-pessego); z-index: 0; }
+.cel-moldura { position: relative; z-index: 1; height: clamp(380px, 52vh, 520px); overflow: hidden; border: 8px solid var(--eva-texto); border-bottom: 0; border-radius: 40px 40px 0 0; background: #000; box-shadow: var(--eva-sombra-alta); }
+.cel-moldura img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.abertura__form { padding-bottom: clamp(32px, 5vw, 64px); }
+
+/* ---------- S03 · Problema ---------- */
+.dados { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 20px; }
+.dado { background: #fff; border-radius: var(--eva-raio-banner); padding: clamp(24px, 3vw, 36px); box-shadow: var(--eva-sombra); }
+.dado strong { display: block; font-size: clamp(3rem, 6vw, 4.6rem); font-weight: 600; line-height: 1; letter-spacing: -.03em; color: var(--eva-magenta-forte); margin-bottom: 12px; }
+.dado--destaque { background: var(--eva-grad-rosa-pessego); }
+.dados__fecho { margin: 40px 0 16px; font-size: clamp(1.3rem, 2.4vw, 1.9rem); letter-spacing: -.01em; }
+.dados__fecho b { font-weight: 600; }
+
+/* ---------- S08 · Origem ---------- */
+.origem { display: grid; grid-template-columns: minmax(240px, 360px) 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.origem__video { margin: 0; }
+.origem__moldura { position: relative; aspect-ratio: 9 / 16; border-radius: var(--eva-raio-banner); overflow: hidden; transform: rotate(-1.5deg); box-shadow: var(--eva-sombra-alta); transition: transform .45s var(--eva-mola); background: #000; }
+.origem__moldura:hover { transform: rotate(0) translateY(-6px); }
+.origem__moldura img { width: 100%; height: 100%; object-fit: cover; }
+.origem__play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: rgba(255, 255, 255, .28); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .5); }
+.origem__play::after { content: ""; position: absolute; left: 31px; top: 25px; border-left: 20px solid #fff; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.origem__video figcaption { margin-top: 16px; font-size: 13.5px; color: var(--eva-texto-suave); }
+.origem__texto { display: grid; gap: 24px; }
+.origem__texto .tag { margin: 0; }
+.origem__texto h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); }
+
+/* ---------- S04 · Pausa × jornada ---------- */
+.pausa { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pausa__cartao { border-radius: var(--eva-raio-banner); padding: clamp(24px, 3vw, 40px); }
+.pausa__cartao h3 { margin-bottom: 16px; }
+.pausa__cartao ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.pausa__cartao--pausa { background: var(--eva-creme); color: var(--eva-texto-suave); }
+.pausa__cartao--jornada { background: var(--eva-grad-azul-claro); }
+.pausa__fecho { margin-top: 40px; font-size: clamp(1.3rem, 2.4vw, 1.9rem); letter-spacing: -.01em; }
+.pausa__fecho b { font-weight: 600; }
+
+/* ---------- S05 · Jornada ---------- */
+.capitulos { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.capitulo { display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start; background: #fff; border-radius: var(--eva-raio-cartao); padding: 24px; box-shadow: var(--eva-sombra); }
+.capitulo img { width: 56px; height: 56px; }
+.capitulo h3 { margin-bottom: 6px; }
+.capitulo .fonte { margin-top: 8px; }
+.aprofundar { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 15px; }
+.secao__acoes { margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+
+/* ---------- S06 · Em ação ---------- */
+.casos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.caso { background: var(--eva-fundo); border-radius: var(--eva-raio-cartao); padding: 24px; }
+.caso h3 { margin-bottom: 8px; font-size: 18px; }
+.caso p { font-size: 15px; color: var(--eva-texto-suave); }
+.casos__rh { margin-top: 24px; }
+
+/* ---------- S07 · Para o RH ---------- */
+.rh { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.rh__painel { min-height: 360px; border-radius: var(--eva-raio-banner); background: #fff; box-shadow: var(--eva-sombra-alta); padding: 20px; display: flex; align-items: flex-end; }
+.rh__privacidade h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 400; letter-spacing: -.02em; margin-bottom: 16px; }
+.rh__privacidade h3 b { font-weight: 600; }
+.rh__privacidade p { color: var(--eva-texto-suave); }
+.objetivos { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.objetivos li { background: #fff; border-radius: var(--eva-raio-cartao); padding: 16px; font-weight: 600; font-size: 15px; }
+
+/* ---------- S09 · Como começar ---------- */
+.passos { list-style: none; counter-reset: passo; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.passos li { counter-increment: passo; background: #fff; border-radius: var(--eva-raio-banner); padding: clamp(24px, 3vw, 32px); box-shadow: var(--eva-sombra); }
+.passos li::before { content: counter(passo); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--eva-fundo); color: var(--eva-acento-texto); font-weight: 600; margin-bottom: 20px; }
+.passos h3 { margin-bottom: 8px; }
+.passos p { color: var(--eva-texto-suave); font-size: 15.5px; }
+
+/* ---------- S10 · Dúvidas ---------- */
+.duvidas { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.duvidas details { border-bottom: 1px solid var(--eva-borda); }
+.duvidas summary { list-style: none; display: flex; justify-content: space-between; gap: 16px; padding: 22px 0; font-weight: 600; font-size: 17px; cursor: pointer; }
+.duvidas summary::-webkit-details-marker { display: none; }
+.duvidas summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--eva-fundo); font-weight: 500; transition: transform .3s var(--eva-curva); }
+.duvidas details[open] summary::after { transform: rotate(45deg); }
+.duvidas details p { padding: 0 44px 22px 0; color: var(--eva-texto-suave); }
+
+/* ---------- S11 · Fale com a Eva ---------- */
+.fale { background: var(--eva-grad-azul); }
+.fale__grade { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.fale__texto { display: grid; gap: 24px; }
+.fale__texto .tag { margin: 0; color: var(--eva-texto); }
+.fale__passos { margin: 0; padding-left: 22px; display: grid; gap: 8px; font-size: 17px; }
+.fale__passos b { font-weight: 600; }
+
+/* ---------- celular e tablet ---------- */
+@media (max-width: 1080px) {
+  .abertura__grade { grid-template-columns: minmax(0, 1fr) 360px; }
+  .abertura__bloco { grid-template-columns: 1fr; min-height: 0; }
+  .abertura__cel { display: none; }
+  .casos { grid-template-columns: 1fr 1fr; }
+  .objetivos { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .abertura__grade { grid-template-columns: 1fr; }
+  .abertura__bloco { grid-template-columns: 1fr; }
+  .abertura__texto { padding-bottom: 8px; }
+  .abertura__cta-cel { display: inline-flex; width: 100%; order: 9; }
+  .abertura__cel { display: block; align-self: center; width: 240px; order: 8; }
+  .abertura__bloco { display: flex; flex-direction: column; align-items: flex-start; }
+  .abertura__texto { display: contents; }
+  .abertura__texto > * { margin-bottom: 18px; }
+  .cel-moldura { height: 300px; }
+  .abertura__form { display: none; }
+  .abertura__cta-cel { position: relative; z-index: 2; margin: 0 0 24px; }
+  .dados, .pausa, .rh, .fale__grade, .duvidas, .passos { grid-template-columns: 1fr; }
+  .origem { grid-template-columns: 1fr; }
+  .origem__video { order: 2; width: 80%; justify-self: center; }
+  .casos { grid-template-columns: 1fr; }
+  .objetivos { grid-template-columns: 1fr 1fr; }
+  .rh__painel { min-height: 260px; }
+}

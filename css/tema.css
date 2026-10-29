@@ -1,0 +1,63 @@
+/* Tema Eva: tokens do app (conhecimento/app-eva/tokens.md) e ponte para as variáveis da biblioteca. */
+:root {
+  /* cores do app */
+  --eva-texto: #0E2433;
+  --eva-texto-suave: #546673;
+  --eva-magenta: #CD3976;
+  --eva-magenta-forte: #D81B60;
+  --eva-azul: #78C0D7;
+  --eva-azul-suave: #BBDEEA;
+  --eva-azul-medio: #5A9AA8;
+  --eva-azul-escuro: #295163;
+  --eva-azul-neutro: #DAE8EE;
+  --eva-fundo: #E4F5FB;
+  --eva-acento: #E1F2F8;
+  --eva-acento-texto: #237486;
+  --eva-borda: #D4E1E5;
+  --eva-foco: #71AFC3;
+  --eva-creme: #FEF9EC;
+  --eva-verde: #277D60;
+  --eva-branco: #fff;
+
+  /* degradês do app */
+  --eva-grad-rosa-pessego: linear-gradient(90deg, #FCE8F0 0%, #FCE8F0 52%, #FCD7C3 100%);
+  --eva-grad-azul: linear-gradient(90deg, #E4F5FB 0%, #BBDEEA 52%, #78C0D7 100%);
+  --eva-grad-azul-claro: linear-gradient(90deg, #E4F5FB 0%, #E4F5FB 52%, #BBDEEA 100%);
+  --eva-grad-salvia: linear-gradient(90deg, #DAE8EE 0%, #FEF9EC 52%, #BCCBB6 100%);
+  --eva-grad-fundo: linear-gradient(180deg, #FFFFFF 0%, #E4F5FB 100%);
+
+  /* forma */
+  --eva-raio-pilula: 40px;
+  --eva-raio-banner: 24px;
+  --eva-raio-cartao: 16px;
+  --eva-sombra: 0 1px 3px rgba(14, 36, 51, .08), 0 8px 24px rgba(14, 36, 51, .06);
+  --eva-sombra-alta: 0 2px 6px rgba(14, 36, 51, .08), 0 24px 60px rgba(14, 36, 51, .12);
+
+  /* motion */
+  --eva-curva: cubic-bezier(.32, .72, .24, 1);
+  --eva-mola: cubic-bezier(.3, 1.35, .5, 1);
+
+  /* tipografia */
+  --eva-fonte: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --eva-h1: clamp(2.6rem, 5.4vw, 4.8rem);
+  --eva-h2: clamp(2rem, 4vw, 3.4rem);
+
+  /* layout */
+  --nav-h: 72px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --container: 1200px;
+
+  /* ponte para a biblioteca */
+  --acao: var(--eva-magenta);
+  --acao-forte: var(--eva-magenta-forte);
+  --traco: var(--eva-magenta-forte);
+  --sobre-acao: #fff;
+  --fundo: #fff;
+  --fundo-secao: var(--eva-fundo);
+  --texto: var(--eva-texto);
+  --texto-sec: var(--eva-texto-suave);
+  --linha: var(--eva-borda);
+  --linha2: var(--eva-azul-neutro);
+  --tag: var(--eva-magenta);
+}
+@media (max-width: 900px) { :root { --nav-h: 60px; } }

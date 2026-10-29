@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Eva Maternidade · Benefício corporativo de maternidade</title>
+<meta name="description" content="Cuidado contínuo para cada colaboradora, da tentativa de engravidar à volta ao trabalho, inclusive na perda. Um benefício corporativo com app, especialistas e um painel agregado para o RH.">
+<meta name="theme-color" content="#E4F5FB">
+<link rel="icon" href="assets/img/fase-gestante.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tema.css">
+<link rel="stylesheet" href="css/biblioteca.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/secoes.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- S01 · Navegação -->
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__logo" href="#topo" aria-label="Eva Maternidade, início"><img src="assets/marcas/logo-eva.svg" alt="Eva Maternidade" width="121" height="24"></a>
+    <nav aria-label="Seções">
+      <ul class="nav__itens">
+        <li class="nav__item"><a href="#origem" data-secao="origem">Nossa origem</a></li>
+        <li class="nav__item jornadas">
+          <button type="button" aria-expanded="false" aria-controls="jornadas-painel" data-secao="jornada">Jornadas <svg class="nav__seta" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="jornadas__painel" id="jornadas-painel">
+            <ul class="jornadas__lista">
+              <li class="fase-link"><img src="assets/img/fase-tentante.webp" alt="" width="40" height="40"><a href="#jornada-tentante">Tentando engravidar</a><span class="fase-link__sem">Ver na jornada</span></li>
+              <li class="fase-link"><img src="assets/img/fase-gestante.webp" alt="" width="40" height="40"><a href="#jornada-gestacao">Gestação</a><span class="fase-link__sem">Ver na jornada</span></li>
+              <li class="fase-link"><img src="assets/img/fase-puerpera.webp" alt="" width="40" height="40"><a href="#jornada-pos-parto">Pós-parto e licença</a><span class="fase-link__sem">Ver na jornada</span></li>
+              <li class="fase-link"><img src="assets/img/fase-pos-licenca.webp" alt="" width="40" height="40"><a href="#jornada-retorno">Volta ao trabalho</a><span class="fase-link__sem">Ver na jornada</span></li>
+              <li class="fase-link"><img src="assets/img/fase-mae-de-anjo.webp" alt="" width="40" height="40"><a href="#jornada-perda">Perda gestacional</a><a class="fase-link__guia" href="https://lutoparental.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=menu-jornadas-perda" data-aprofundar="menu-jornadas:perda">Guia para o RH →</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__item"><a href="#para-o-rh" data-secao="para-o-rh">Para o RH</a></li>
+        <li class="nav__item"><a href="#duvidas" data-secao="duvidas">Dúvidas</a></li>
+      </ul>
+    </nav>
+    <div class="nav__acoes">
+      <a class="btn btn--sm nav__cta" href="#agendar" data-origem="nav">Agendar conversa</a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><span></span></button>
+    </div>
+  </div>
+  <div class="nav__progresso" aria-hidden="true"></div>
+</header>
+
+<div class="gaveta" id="gaveta">
+  <ul class="gaveta__itens">
+    <li><a href="#origem">Nossa origem</a></li>
+    <li><a href="#para-o-rh">Para o RH</a></li>
+    <li><a href="#duvidas">Dúvidas</a></li>
+  </ul>
+  <h2>Jornadas</h2>
+  <ul class="jornadas__lista">
+    <li class="fase-link"><img src="assets/img/fase-tentante.webp" alt="" width="40" height="40"><a href="#jornada-tentante">Tentando engravidar</a><span class="fase-link__sem">Ver na jornada</span></li>
+    <li class="fase-link"><img src="assets/img/fase-gestante.webp" alt="" width="40" height="40"><a href="#jornada-gestacao">Gestação</a><span class="fase-link__sem">Ver na jornada</span></li>
+    <li class="fase-link"><img src="assets/img/fase-puerpera.webp" alt="" width="40" height="40"><a href="#jornada-pos-parto">Pós-parto e licença</a><span class="fase-link__sem">Ver na jornada</span></li>
+    <li class="fase-link"><img src="assets/img/fase-pos-licenca.webp" alt="" width="40" height="40"><a href="#jornada-retorno">Volta ao trabalho</a><span class="fase-link__sem">Ver na jornada</span></li>
+    <li class="fase-link"><img src="assets/img/fase-mae-de-anjo.webp" alt="" width="40" height="40"><a href="#jornada-perda">Perda gestacional</a><a class="fase-link__guia" href="https://lutoparental.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=menu-jornadas-perda" data-aprofundar="menu-jornadas:perda">Guia para o RH →</a></li>
+  </ul>
+  <a class="btn" href="#agendar" data-origem="gaveta">Agendar conversa</a>
+</div>
+
+<main id="conteudo">
+
+<!-- S02 · Abertura -->
+<section class="abertura" id="abertura" aria-labelledby="abertura-titulo">
+  <span id="topo"></span>
+  <div class="wrap abertura__grade">
+    <div class="abertura__bloco">
+      <div class="abertura__texto">
+        <p class="tag">Benefício corporativo de maternidade</p>
+        <h1 id="abertura-titulo" data-traco>A licença termina. <b>A transformação, <span class="mk" data-mk="sublinhado">não</span>.</b></h1>
+        <p class="lead">Cuidado contínuo para cada colaboradora, da tentativa de engravidar à volta ao trabalho, inclusive na perda.</p>
+        <a class="link-seta" href="#jornada">Ver como funciona <span aria-hidden="true">→</span></a>
+        <a class="btn abertura__cta-cel" href="#fale" data-origem="abertura-celular">Agendar conversa</a>
+      </div>
+      <div class="abertura__cel" aria-hidden="true">
+        <div class="cel-moldura"><img src="assets/img/boas-vindas-poster.webp" alt="" width="540" height="960"></div>
+      </div>
+    </div>
+    <div class="abertura__form" data-form-slot="abertura"></div>
+  </div>
+</section>
+
+<!-- S03 · O problema em dados -->
+<section class="secao secao--fundo" id="problema" aria-labelledby="problema-titulo">
+  <div class="wrap">
+    <div class="secao__topo"><p class="tag">Por que importa</p>
+      <h2 id="problema-titulo">A maternidade não afasta mulheres do trabalho. <b>A falta de apoio, sim.</b></h2></div>
+    <div class="dados">
+      <div class="dado dado--destaque"><strong>65%</strong><p>das saídas, entre as mães que deixaram o emprego, acontecem no primeiro ano depois da licença</p></div>
+      <div class="dado"><strong>69%</strong><p>não se sentiam emocionalmente prontas para voltar ao trabalho depois da licença</p></div>
+      <div class="dado"><strong>97,5%</strong><p>ficariam mais tempo numa empresa que apoiasse de verdade mães que trabalham</p></div>
+    </div>
+    <p class="dados__fecho">A data de volta é administrativa. <b>A prontidão, não.</b></p>
+    <p class="fonte">Pesquisa Executive Moms com 479 mães trabalhadoras. Intenção declarada; não representa retenção observada.</p>
+  </div>
+</section>
+
+<!-- S08 · Nossa origem (4ª posição) -->
+<section class="secao secao--creme" id="origem" aria-labelledby="origem-titulo">
+  <div class="wrap origem">
+    <figure class="origem__video">
+      <div class="origem__moldura"><img src="assets/img/boas-vindas-poster.webp" alt="" width="540" height="960" loading="lazy"><span class="origem__play" aria-hidden="true"></span></div>
+      <figcaption>Mariana Rios conta como nasceu a Eva Maternidade · 3 min</figcaption>
+    </figure>
+    <div class="origem__texto">
+      <p class="tag">Nossa origem</p>
+      <h2 id="origem-titulo" data-traco>Cuidar das mulheres na jornada da maternidade é <b>fortalecer o vínculo, a confiança e a <span class="mk" data-mk="sublinhado">cultura</span> da sua empresa.</b></h2>
+      <p class="fonte">Da base clínica da Eva Saúde e da comunidade do Basta Sentir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- S04 · Pausa × jornada -->
+<section class="secao" id="pausa" aria-labelledby="pausa-titulo">
+  <div class="wrap">
+    <div class="secao__topo"><h2 id="pausa-titulo">Não é só uma fase. <b>É uma transformação que precisa de cuidado.</b></h2>
+      <p class="lead">A maternidade não acontece separada da vida. Atravessa a saúde, a rotina, as relações, a identidade e também o trabalho.</p></div>
+    <div class="pausa">
+      <div class="pausa__cartao pausa__cartao--pausa"><h3>Quando a maternidade é tratada como pausa</h3>
+        <ul><li>Apoio começa na licença e termina na volta</li><li>Tentativa de engravidar e perda ficam invisíveis</li><li>Cada fase resolvida com uma ação isolada</li><li>A colaboradora volta sozinha</li></ul></div>
+      <div class="pausa__cartao pausa__cartao--jornada"><h3>Quando é tratada como jornada</h3>
+        <ul><li>Cuidado da tentativa ao primeiro ano depois da volta</li><li>Inclusive na perda gestacional</li><li>Acompanhamento contínuo, no ritmo de cada fase</li><li>O RH acompanha o agregado, com privacidade</li></ul></div>
+    </div>
+    <p class="pausa__fecho">Ações pontuais acolhem momentos. <b>Jornadas contínuas exigem estrutura.</b></p>
+  </div>
+</section>
+
+<!-- S05 · A jornada com a Eva -->
+<section class="secao secao--fundo" id="jornada" aria-labelledby="jornada-titulo">
+  <div class="wrap">
+    <div class="secao__topo"><p class="tag">Como funciona</p>
+      <h2 id="jornada-titulo">Uma jornada guiada, <b>do jeito de cada fase.</b></h2>
+      <p class="lead">Cada colaboradora recebe conteúdos, ferramentas e acompanhamento de acordo com o momento que está vivendo, sempre com especialistas por perto.</p></div>
+    <ol class="capitulos">
+      <li class="capitulo" id="jornada-tentante"><img src="assets/img/fase-tentante.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Tentando engravidar</h3><p>Apoio desde o planejamento, com orientação especializada em cada etapa da tentativa.</p></div></li>
+      <li class="capitulo" id="jornada-gestacao"><img src="assets/img/fase-gestante.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Gestação</h3><p>Acompanhamento, informação confiável e orientação contínua para atravessar a gestação com mais segurança.</p></div></li>
+      <li class="capitulo" id="jornada-pos-parto"><img src="assets/img/fase-puerpera.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Pós-parto e licença</h3><p>Acolhimento emocional, especialistas e conteúdos para a saúde mental, a rotina e a adaptação.</p></div></li>
+      <li class="capitulo" id="jornada-retorno"><img src="assets/img/fase-pos-licenca.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Volta ao trabalho</h3><p>Preparação para o retorno e acompanhamento no primeiro ano, para a colaboradora e o RH.</p><p class="fonte">69% não se sentiam prontas para voltar (Executive Moms).</p></div></li>
+      <li class="capitulo" id="jornada-perda"><img src="assets/img/fase-mae-de-anjo.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Perda gestacional</h3><p>Acolhimento especializado, rodas de conversa com psicóloga perinatal e comunidade, no tempo de cada mulher.</p>
+        <p class="aprofundar"><a class="link-seta" href="https://lutoparental.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=jornada-perda" data-aprofundar="jornada:perda">Guia para o RH: Quando o luto chega ao trabalho <span aria-hidden="true">→</span></a> <span class="etiqueta">e-book + diagnóstico</span></p></div></li>
+    </ol>
+    <p class="secao__acoes"><a class="btn" href="#agendar" data-origem="jornada">Agendar conversa</a></p>
+  </div>
+</section>
+
+<!-- S06 · Veja em ação -->
+<section class="secao" id="em-acao" aria-labelledby="em-acao-titulo">
+  <div class="wrap">
+    <div class="secao__topo"><h2 id="em-acao-titulo">Veja a Eva <b>em ação.</b></h2></div>
+    <div class="casos">
+      <div class="caso"><h3>Conversa com a Eva</h3><p>A colaboradora conta o que está vivendo e recebe orientação na hora. Quando precisa, a conversa vira uma consulta com especialista.</p></div>
+      <div class="caso"><h3>Check-ins e acompanhamentos</h3><p>Perguntas rápidas e periódicas acompanham como ela está e indicam o próximo cuidado.</p></div>
+      <div class="caso"><h3>Conteúdos com especialistas</h3><p>Cursos, revistas, documentários e podcasts por fase, com especialistas, e o progresso salvo.</p></div>
+      <div class="caso"><h3>Rodas de conversa e rede de apoio</h3><p>Encontros ao vivo com especialistas e uma comunidade para trocar com quem vive o mesmo momento.</p></div>
+    </div>
+    <p class="fonte casos__rh"><b>O que o RH vê:</b> só dados agregados de adesão e engajamento.</p>
+  </div>
+</section>
+
+<!-- S07 · Para o RH e lideranças -->
+<section class="secao secao--creme" id="para-o-rh" aria-labelledby="rh-titulo">
+  <div class="wrap">
+    <div class="secao__topo"><p class="tag">Para o RH e lideranças</p>
+      <h2 id="rh-titulo">Cuidado cria vínculo. <b>Vínculo sustenta permanência.</b></h2>
+      <p class="lead">Um painel para o RH e as lideranças acompanharem a jornada na empresa, com privacidade.</p></div>
+    <div class="rh">
+      <div class="rh__painel" aria-hidden="true"><span class="etiqueta">dados agregados · sem informação individual</span></div>
+      <div class="rh__privacidade"><h3>O RH vê o todo. <b>Nunca a pessoa.</b></h3>
+        <p>O que cada colaboradora registra no app é dela. A empresa recebe apenas dados agregados e anonimizados, como adesão e engajamento por fase, para apoiar decisões de cuidado.</p></div>
+    </div>
+    <ul class="objetivos">
+      <li>Permanência</li><li>Saúde emocional</li><li>Retorno acompanhado</li><li>Adesão ao benefício</li><li>Cultura e equidade</li><li>Lideranças</li>
+    </ul>
+    <p class="secao__acoes"><a class="btn" href="#agendar" data-origem="para-o-rh">Agendar conversa</a></p>
+  </div>
+</section>
+
+<!-- S09 · Como começar -->
+<section class="secao secao--fundo" id="como-comecar" aria-labelledby="comecar-titulo">
+  <div class="wrap">
+    <div class="secao__topo"><h2 id="comecar-titulo">Como a Eva chega à <b>sua empresa</b></h2></div>
+    <ol class="passos">
+      <li><h3>Uma conversa</h3><p>Entendemos o contexto da sua empresa: tamanho, momento e o que já existe de cuidado.</p></li>
+      <li><h3>Um modelo de implantação</h3><p>Apresentamos o modelo que faz sentido para vocês e como comunicar o benefício às colaboradoras.</p></li>
+      <li><h3>As colaboradoras na jornada</h3><p>Cada uma entra no app e escolhe a fase que está vivendo.</p></li>
+    </ol>
+    <p class="secao__acoes"><a class="btn" href="#agendar" data-origem="como-comecar">Agendar conversa</a> <a class="link-seta" href="#duvidas">Ver as dúvidas frequentes <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<!-- S10 · Dúvidas do RH -->
+<section class="secao" id="duvidas" aria-labelledby="duvidas-titulo">
+  <div class="wrap duvidas">
+    <h2 id="duvidas-titulo">O que o RH <b>pergunta antes.</b></h2>
+    <div class="duvidas__lista">
+      <details><summary>A empresa vê os dados de saúde das colaboradoras?</summary><p>Não. O que cada uma registra no app é dela. A empresa recebe apenas dados agregados e anonimizados, como adesão e engajamento.</p></details>
+      <details><summary>A Eva substitui o plano de saúde?</summary><p>Não. A Eva complementa o plano: acompanha a jornada entre uma consulta e outra, com conteúdo, comunidade e especialistas.</p></details>
+      <details><summary>Quem pode usar?</summary><p>Colaboradoras em qualquer fase: tentando engravidar, gestantes, no pós-parto, na volta ao trabalho e depois de uma perda gestacional.</p></details>
+      <details><summary>Como é a implantação?</summary><p>Começa com uma conversa para entender a empresa; depois apresentamos o modelo de implantação e o plano de comunicação para as colaboradoras.</p></details>
+      <details><summary>Quanto custa?</summary><p>Depende do tamanho da empresa e do modelo de implantação. O valor é apresentado depois da conversa.</p></details>
+      <details><summary>Como as colaboradoras ficam sabendo?</summary><p>A Eva apoia a comunicação do benefício para que ele seja conhecido e usado.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- S11 · Fale com a Eva -->
+<section class="secao fale" id="fale" aria-labelledby="fale-titulo">
+  <div class="wrap fale__grade">
+    <div class="fale__texto">
+      <p class="tag">Fale com a Eva</p>
+      <h2 id="fale-titulo">Leve a Eva Maternidade <b>para a sua empresa.</b></h2>
+      <ol class="fale__passos"><li><b>Você preenche.</b> Leva menos de um minuto.</li><li><b>A Eva chama você</b> para uma conversa.</li></ol>
+    </div>
+    <div class="fale__form" data-form-slot="conversao" data-titulo="Agendar conversa" data-apoio="Conte sobre sua empresa. A Eva retorna para marcar."></div>
+  </div>
+</section>
+
+</main>
+
+<!-- S12 · Rodapé -->
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape__grade">
+      <div class="rodape__marca">
+        <img src="assets/marcas/logo-eva-claro.svg" alt="Eva Maternidade" width="153" height="30" loading="lazy">
+        <p>Cuidado contínuo da jornada materna para empresas.</p>
+        <a class="btn btn--sm" href="#agendar" data-origem="rodape">Agendar conversa</a>
+      </div>
+      <div>
+        <h2>Guias para o RH por jornada</h2>
+        <ul>
+          <li class="rodape__guia"><small>Perda gestacional</small><a href="https://lutoparental.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=rodape-perda" data-aprofundar="rodape:perda">Quando o luto chega ao trabalho</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <ul>
+          <li><a href="mailto:contato@evamaternidade.com.br">contato@evamaternidade.com.br</a></li>
+          <li>Sua empresa ainda não tem a Eva? <a href="https://indique.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=rodape">Indique</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <span>© 2026 Eva Maternidade · Política de privacidade <span class="pendente">URL pendente</span></span>
+      <span>Basta Sentir e Eva Saúde <span class="pendente">validar</span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="barra"><a class="btn" href="#fale" data-origem="barra">Agendar conversa</a></div>
+
+<!-- Formulário compartilhado (S02 + S11): clonado por js/formulario.js -->
+<template id="tpl-form">
+  <div class="form">
+    <form class="form__corpo" novalidate aria-labelledby="form-titulo">
+      <h2 class="form__titulo" id="form-titulo">Agende uma conversa</h2>
+      <p class="form__apoio">Conte sobre sua empresa. A Eva retorna para marcar.</p>
+      <div class="form__campos">
+        <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" name="fullname" autocomplete="name" required aria-describedby="e-nome"><span class="campo__erro" id="e-nome" aria-live="polite"></span></div>
+        <div class="campo"><label for="f-email">E-mail corporativo</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email"><span class="campo__erro" id="e-email" aria-live="polite"></span></div>
+        <div class="campo campo--meio"><label for="f-empresa">Empresa</label><input id="f-empresa" name="field[49]" autocomplete="organization" required aria-describedby="e-empresa"><span class="campo__erro" id="e-empresa" aria-live="polite"></span></div>
+        <div class="campo campo--meio"><label for="f-cargo">Cargo</label><input id="f-cargo" name="field[51]" autocomplete="organization-title"></div>
+        <div class="campo campo--meio"><label for="f-porte">Colaboradores</label>
+          <select id="f-porte" name="field[50]" required aria-describedby="e-porte">
+            <option value="">Selecione</option>
+            <option>Apenas eu / Autônomo(a)</option><option>2 a 5 funcionários</option><option>6 a 10 funcionários</option><option>11 a 20 funcionários</option><option>21 a 50 funcionários</option><option>51 a 100 funcionários</option><option>101 a 250 funcionários</option><option>251 a 500 funcionários</option><option>501 a 1.000 funcionários</option><option>Mais de 1.000 funcionários</option>
+          </select><span class="campo__erro" id="e-porte" aria-live="polite"></span></div>
+        <div class="campo campo--meio"><label for="f-tel">WhatsApp com DDD</label><input id="f-tel" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
+        <label class="consent"><input type="checkbox" name="consent" required aria-describedby="e-consent"><span>Aceito receber contato da Eva Maternidade por WhatsApp e e-mail sobre o benefício. Dá para sair quando quiser. <span class="pendente">texto LGPD a validar</span></span><span class="campo__erro" id="e-consent" aria-live="polite"></span></label>
+      </div>
+      <button class="btn btn--largo form__enviar" type="submit">Agendar conversa</button>
+      <p class="form__falha" role="alert"></p>
+      <p class="form__alt">Prefere escolher um horário? <a href="#" data-agenda="form" target="_blank" rel="noopener">Ver agenda</a></p>
+    </form>
+    <div class="form__ok" hidden>
+      <h3 tabindex="-1">Recebemos. Agora é com a gente.</h3>
+      <ol><li>Olhamos o contexto da sua empresa.</li><li>A Eva chama você no WhatsApp ou e-mail que você deixou.</li><li>Na conversa, você conhece o modelo de implantação para a sua empresa.</li></ol>
+      <a class="btn btn--largo" href="#" data-agenda="obrigado" target="_blank" rel="noopener">Escolher horário agora</a>
+      <p class="form__previa">Prévia: nada foi enviado.</p>
+    </div>
+  </div>
+</template>
+</body>
+</html>

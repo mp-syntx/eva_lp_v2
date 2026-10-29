@@ -7,6 +7,7 @@ import { abertura } from './abertura.js';
 import { problema, origem, pausa } from './secoes.js';
 import { jornada } from './jornada.js';
 import { emAcao } from './emacao.js';
+import { painel } from './painel.js';
 
 const nav = $('.nav');
 const dl = (window.dataLayer = window.dataLayer || []);
@@ -128,3 +129,6 @@ jornada();
 
 /* ---------- T014 · S06 em ação ---------- */
 emAcao();
+
+/* ---------- T015 · S07 painel do RH ---------- */
+painel();

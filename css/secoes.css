@@ -290,3 +290,74 @@
   .vit-desc [role=tabpanel] { padding-left: 16px; }
 }
 @media (max-width: 900px) { .vit { grid-template-columns: minmax(0, 1fr); } .vit-lista, .vit-celular, .vit-desc { min-width: 0; } }
+
+/* ---------- T015 · S07 painel do RH ---------- */
+.rh { align-items: start; }
+.rh__painel { display: none; }
+.painel { background: #fff; border-radius: var(--eva-raio-banner); box-shadow: var(--eva-sombra-alta); overflow: hidden; }
+.painel__barra { display: flex; align-items: center; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--eva-borda); font-size: 12px; color: var(--eva-texto-suave); }
+.painel__barra span { width: 10px; height: 10px; border-radius: 50%; background: var(--eva-azul-neutro); }
+.painel__barra b { font-weight: 500; margin-left: 10px; }
+.painel__corpo { display: grid; grid-template-columns: 172px 1fr; min-height: 400px; }
+.painel__menu { background: var(--eva-fundo); padding: 14px 10px; display: flex; flex-direction: column; gap: 4px; }
+.painel__menu [role=tab] { all: unset; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; font-size: 14px; font-weight: 500; cursor: pointer; color: var(--eva-texto-suave); transition: background .3s var(--eva-curva), color .3s; }
+.painel__menu [role=tab] svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.painel__menu [role=tab]:hover { background: rgba(255, 255, 255, .6); }
+.painel__menu [role=tab][aria-selected=true] { background: #fff; color: var(--eva-magenta); font-weight: 600; box-shadow: var(--eva-sombra); }
+.painel__menu [role=tab]:focus-visible { outline: 2px solid var(--eva-foco); outline-offset: 2px; }
+.painel__area { position: relative; padding: 20px 22px 48px; }
+.painel__aba { display: grid; gap: 14px; }
+.painel__aba[hidden] { display: none; }
+.painel__aba:not([hidden]) { animation: painel-entra .4s var(--eva-curva) both; }
+@keyframes painel-entra { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+.painel__ola { font-size: 18px; } .painel__ola b { font-weight: 600; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.kpis--2 { grid-template-columns: 1fr 1fr; }
+.kpis > div { background: var(--eva-fundo); border-radius: 14px; padding: 12px 14px; display: grid; gap: 4px; }
+.kpis > .destaque { background: var(--eva-grad-rosa-pessego); }
+.kpis small, .cartao-p > small, .anel small { font-size: 12px; color: var(--eva-texto-suave); line-height: 1.3; }
+.kpis b { font-size: 26px; font-weight: 600; letter-spacing: -.02em; line-height: 1.1; }
+.cartao-p { border: 1px solid var(--eva-borda); border-radius: 14px; padding: 14px 16px; display: grid; gap: 10px; }
+.anel { grid-template-columns: 130px 1fr; align-items: center; gap: 18px; }
+.anel svg { width: 130px; height: 130px; transform: rotate(-90deg); }
+.anel-trilho { fill: none; stroke: var(--eva-fundo); stroke-width: 14; }
+.anel-seg { fill: none; stroke-width: 14; }
+.vai .anel-seg { animation: anel-enche 1s var(--eva-curva) both; }
+@keyframes anel-enche { from { stroke-dasharray: 0 100; } }
+.anel ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; font-size: 13px; }
+.anel li { display: grid; grid-template-columns: 10px 1fr auto; gap: 8px; align-items: center; }
+.anel li i { width: 10px; height: 10px; border-radius: 3px; }
+.anel li b { font-weight: 600; }
+.linha svg { width: 100%; height: auto; overflow: visible; }
+.linha text { font: 500 10px var(--eva-fonte); fill: var(--eva-texto-suave); }
+.linha-area { fill: rgba(120, 192, 215, .18); }
+.linha-traco { fill: none; stroke: var(--eva-magenta); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; }
+.vai .linha-traco { animation: tr-desenha 1.2s var(--eva-curva) both; }
+.linha-ponto { fill: #fff; stroke: var(--eva-magenta); stroke-width: 2; }
+.barra-t { display: grid; grid-template-columns: minmax(0, 1.3fr) 1fr 40px; gap: 10px; align-items: center; font-size: 13px; }
+.barra-t i { height: 8px; border-radius: 8px; background: var(--eva-fundo); position: relative; overflow: hidden; }
+.barra-t i::after { content: ""; position: absolute; inset: 0; background: var(--eva-azul); border-radius: 8px; transform: scaleX(var(--v)); transform-origin: left; }
+.vai .barra-t i::after { animation: barra-enche .9s var(--eva-curva) both; }
+@keyframes barra-enche { from { transform: scaleX(0); } }
+.barra-t b { font-weight: 600; text-align: right; }
+.painel__privado { position: absolute; left: 22px; bottom: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 600; color: var(--eva-acento-texto); background: var(--eva-acento); border-radius: 20px; padding: 4px 10px; }
+.painel__privado svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; }
+.painel__rotulo { font-size: 11.5px; color: var(--eva-texto-suave); padding: 0 16px 12px; text-align: right; }
+.garantias { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+.garantias li { position: relative; padding-left: 30px; font-weight: 500; }
+.garantias li::before { content: ""; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--eva-acento); }
+.garantias li::after { content: ""; position: absolute; left: 6px; top: 8px; width: 8px; height: 4px; border-left: 2px solid var(--eva-acento-texto); border-bottom: 2px solid var(--eva-acento-texto); transform: rotate(-45deg); }
+@media (max-width: 1080px) { .painel__corpo { grid-template-columns: 1fr; } .painel__menu { flex-direction: row; overflow-x: auto; scrollbar-width: none; } .painel__menu [role=tab] { flex: none; } }
+@media (max-width: 900px) {
+  .rh { grid-template-columns: minmax(0, 1fr); }
+  .painel__menu [role=tab] span { white-space: nowrap; }
+  .painel__area { padding: 16px 14px 46px; }
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .kpis b { font-size: 22px; }
+  .anel { grid-template-columns: 96px 1fr; gap: 12px; } .anel svg { width: 96px; height: 96px; }
+  .barra-t { grid-template-columns: 1fr 40px; } .barra-t span { grid-column: 1 / -1; } .barra-t i { grid-column: 1; }
+  .painel__privado { left: 14px; }
+}
+.painel__area { min-height: 470px; }
+@media (max-width: 900px) { .painel__area { min-height: 500px; } }
+.painel__menu { position: relative; }

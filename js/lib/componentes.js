@@ -254,10 +254,14 @@ export function sobreposicao(secao, antes, depois, { aoFim, recuo = .9 } = {}) {
 /* P-024 · Vitrine de casos com escolha por clique (abas acessíveis).
    abas: botões; paineis: elementos do celular/descrição por caso (mesma ordem);
    historias: [microHistoria...] por caso. Setas ←/→/↑/↓, Home/End navegam.
-   avancar: ms para avanço automático (0 = desligado, como na referência); para de vez no primeiro clique ou tecla. */
-export function vitrine(lista, abas, paineis, historias, { avancar = 0 } = {}) {
+   avancar: ms para avanço automático (0 = desligado, como na referência); para de vez no primeiro clique ou tecla;
+   espera enquanto pausaEm (padrão: lista) está sob o mouse/foco ou fora da tela. */
+export function vitrine(lista, abas, paineis, historias, { avancar = 0, pausaEm = lista } = {}) {
   lista.setAttribute('role', 'tablist');
   let atual = -1, tm, manual = false;
+  const vis = visivel(pausaEm);
+  // espera enquanto o mouse/foco está no componente ou ele está fora da tela
+  const proximo = i => { if (!podeAnimar(vis) || pausaEm.matches(':hover, :focus-within')) { tm = setTimeout(() => proximo(i), 1000); return; } seleciona((i + 1) % abas.length); };
   const seleciona = (i, foco = false) => {
     if (i === atual) return;
     if (atual >= 0) historias[atual]?.parar();
@@ -266,7 +270,7 @@ export function vitrine(lista, abas, paineis, historias, { avancar = 0 } = {}) {
     paineis.forEach(grupo => grupo.forEach((p, k) => { p.hidden = k !== i; }));
     historias[i]?.tocar();
     if (foco) abas[i].focus();
-    clearTimeout(tm); if (avancar && !reduz && !manual) tm = setTimeout(() => seleciona((i + 1) % abas.length), avancar);
+    clearTimeout(tm); if (avancar && !reduz && !manual) tm = setTimeout(() => proximo(i), avancar);
   };
   abas.forEach((a, k) => {
     a.setAttribute('role', 'tab');

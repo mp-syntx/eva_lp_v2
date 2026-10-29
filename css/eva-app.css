@@ -1,0 +1,153 @@
+/* Telas do app Eva Maternidade em HTML/CSS (modo demonstração, T009).
+   Desenho no frame de 393 px do Figma; o celular da biblioteca (.cel) reduz o conjunto.
+   Tokens: conhecimento/app-eva/tokens.md. Componentes: componentes.md. */
+.app {
+  --eva-azul: #78C0D7; --eva-azul-suave: #BBDEEA; --eva-azul-medio: #5A9AA8; --eva-azul-escuro: #295163;
+  --eva-fundo: #E4F5FB; --eva-faixa: #DEEEF5; --eva-borda: #D4E1E5;
+  --eva-magenta: #CD3976; --eva-magenta-forte: #D81B60; --eva-rosa-alerta: #FF657D;
+  --eva-verde: #277D60; --eva-verde-ativo: #1EBCA2; --eva-amarelo: #F7E08A;
+  --eva-texto: #0E2433; --eva-texto-suave: #546673; --eva-superficie: #F9F9F9;
+  --eva-grad-rosa-pessego: linear-gradient(90deg, #FCE8F0 0%, #FCE8F0 52%, #FCD7C3 100%);
+  --eva-grad-fundo: linear-gradient(180deg, #FFFFFF 0%, #E4F5FB 100%);
+  --eva-sh-sm: 0 1px 3px rgba(0,0,0,.10), 0 1px 2px -1px rgba(0,0,0,.10);
+  --eva-sh-md: 0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -2px rgba(0,0,0,.10);
+  --eva-curva: cubic-bezier(.32,.72,.24,1);
+  font-family: 'Poppins', system-ui, sans-serif; color: var(--eva-texto);
+  position: absolute; inset: 0; overflow: hidden; background: var(--eva-grad-fundo);
+  font-size: 14px; line-height: 1.3;
+}
+.app * { box-sizing: border-box; }
+.app svg.ic { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* rolagem interna da tela (para "rolagem guiada") */
+.app .rolo { position: absolute; inset: 45px 0 0; overflow: hidden; }
+.app .status { position: relative; z-index: 4; background: #fff; }
+.app .conteudo { transition: transform .9s var(--eva-curva); padding-bottom: 120px; }
+
+/* status bar e cabeçalho */
+.app .status { height: 45px; display: flex; justify-content: space-between; align-items: center; padding: 0 28px 0 32px; font: 600 15px/1 -apple-system, 'Helvetica Neue', sans-serif; }
+.app .status i { display: inline-block; width: 64px; height: 12px; background: linear-gradient(90deg, #0E2433 0 28%, transparent 28% 40%, #0E2433 40% 62%, transparent 62% 70%, #0E2433 70%); border-radius: 3px; opacity: .85; }
+.app .cab { display: flex; align-items: center; gap: 10px; padding: 12px 20px 16px; background: #fff; }
+.app .cab .av { width: 34px; height: 34px; border-radius: 50%; background: var(--eva-grad-rosa-pessego); display: grid; place-items: center; font-weight: 600; font-size: 14px; color: var(--eva-magenta); }
+.app .cab b { display: block; font-weight: 600; font-size: 16px; }
+.app .cab small { color: var(--eva-texto-suave); font-size: 12px; }
+.app .cab .acoes { margin-left: auto; display: flex; gap: 10px; }
+.app .btn-ic { width: 44px; height: 44px; border-radius: 15px; background: var(--eva-superficie); display: grid; place-items: center; position: relative; color: var(--eva-texto); }
+.app .btn-ic .bolha { position: absolute; top: 4px; right: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--eva-magenta-forte); color: #fff; font-size: 9px; font-weight: 600; display: grid; place-items: center; }
+.app .faixa { background: var(--eva-faixa); padding: 20px; }
+
+/* banner de checkpoint ("Como você está…") */
+.app .banner-ck { position: relative; border-radius: 16px; background: var(--eva-grad-rosa-pessego); box-shadow: var(--eva-sh-md); padding: 22px 20px 20px; }
+.app .banner-ck .ola { color: var(--eva-rosa-alerta); font-weight: 500; font-size: 15px; }
+.app .banner-ck h3 { margin: 4px 0 12px; color: var(--eva-magenta-forte); font-weight: 700; font-size: 25px; line-height: 1.1; max-width: 85%; }
+.app .banner-ck p { margin: 0; font-size: 13px; color: var(--eva-texto-2, #383838); }
+.app .seta-dest { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; background: var(--eva-magenta); color: #fff; display: grid; place-items: center; box-shadow: 0 0 0 9px rgba(205,57,118,.15); }
+.app .seta-dest .ic { width: 20px; height: 20px; }
+
+/* seções */
+.app .sec { padding: 22px 20px 0; }
+.app .sec-t { display: flex; justify-content: space-between; align-items: center; margin: 0 0 12px; }
+.app .sec-t h4 { margin: 0; font-weight: 600; font-size: 17px; }
+.app .sec-t a { color: var(--eva-magenta); font-weight: 600; font-size: 12px; text-decoration: none; }
+
+/* ferramentas */
+.app .ferr { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.app .ferr div { background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); height: 96px; display: grid; place-items: center; align-content: center; gap: 8px; font-size: 10px; font-weight: 500; }
+.app .ferr span { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; }
+
+/* cartão de acompanhamento com medidor */
+.app .acomp { background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 16px 16px 16px 18px; display: grid; grid-template-columns: 1fr 76px; gap: 10px; align-items: center; margin-bottom: 10px; }
+.app .acomp h5 { margin: 8px 0 4px; font-weight: 600; font-size: 17px; }
+.app .acomp p { margin: 0; font-size: 11px; color: var(--eva-texto-suave); }
+.app .etq { display: inline-block; font-size: 10px; font-weight: 600; color: #fff; padding: 3px 8px; border-radius: 6px; }
+.app .etq.pend { background: var(--eva-rosa-alerta); } .app .etq.ativo { background: var(--eva-verde-ativo); } .app .etq.info { background: var(--eva-azul); }
+.app .med { position: relative; width: 76px; height: 76px; }
+.app .med svg { width: 76px; height: 76px; transform: rotate(135deg); }
+.app .med .trilho { fill: none; stroke: #EDEDED; stroke-width: 7; stroke-linecap: round; }
+.app .med .valor { fill: none; stroke-width: 7; stroke-linecap: round; transition: stroke-dashoffset 1.1s var(--eva-curva); }
+.app .med b { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font-size: 9.5px; font-weight: 600; color: var(--eva-magenta-forte); line-height: 1.1; padding-top: 18px; }
+.app .med b em { font-style: normal; color: var(--eva-texto-suave); font-weight: 400; font-size: 8px; display: block; }
+
+/* próximo checkpoint */
+.app .prox { margin-top: 6px; border-radius: 24px; background: var(--eva-grad-rosa-pessego); padding: 18px 16px; display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; }
+.app .prox .circ { width: 48px; height: 48px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: var(--eva-magenta); }
+.app .prox small { display: block; color: var(--eva-magenta-forte); font-weight: 600; font-size: 11px; }
+.app .prox span { font-size: 11px; color: var(--eva-magenta); }
+.app .prox b { display: block; font-size: 16px; font-weight: 600; }
+.app .pilula { background: var(--eva-magenta); color: #fff; border-radius: 40px; padding: 6px 12px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+
+/* consulta */
+.app .consulta { background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 14px 16px; display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: center; }
+.app .consulta .foto { width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(160deg, var(--eva-azul-suave), var(--eva-azul)); display: grid; place-items: center; color: #fff; }
+.app .consulta b { font-weight: 600; font-size: 15px; display: block; } .app .consulta small { color: var(--eva-magenta); font-size: 12px; }
+.app .consulta .hora { text-align: right; color: var(--eva-magenta); font-size: 11px; } .app .consulta .hora b { font-size: 17px; color: var(--eva-magenta-forte); }
+.app .btn-pill { margin-top: 12px; height: 46px; border-radius: 40px; background: var(--eva-magenta); color: #fff; display: flex; justify-content: center; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
+
+/* plano de cuidado */
+.app .plano { background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 10px; display: grid; gap: 10px; }
+.app .tarefa { border: 1px solid #EEF2F4; border-radius: 14px; padding: 12px; display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; }
+.app .tarefa .q { width: 52px; height: 52px; border-radius: 12px; background: var(--eva-fundo); display: grid; place-items: center; color: var(--eva-texto); }
+.app .tarefa b { font-weight: 600; font-size: 13px; display: block; } .app .tarefa small { color: var(--eva-texto-suave); font-size: 11px; display: block; margin: 2px 0 5px; }
+
+/* barra inferior */
+.app .nav-inf { position: absolute; left: 22px; right: 22px; bottom: 30px; height: 64px; border-radius: 40px; background: var(--eva-azul); display: flex; justify-content: space-between; padding: 0; z-index: 3; }
+.app .nav-inf span { width: 64px; height: 64px; border-radius: 40px; background: #fff; display: grid; place-items: center; color: var(--eva-azul-medio); transition: background .35s var(--eva-curva), color .35s; }
+.app .nav-inf span.on { background: var(--eva-magenta); color: #fff; }
+.app .indicador { position: absolute; bottom: 9px; left: 50%; width: 134px; height: 5px; margin-left: -67px; border-radius: 100px; background: #000; z-index: 3; }
+
+/* toque simulado */
+.app .toque { position: absolute; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: rgba(14,36,51,.18); border: 2px solid rgba(255,255,255,.9); z-index: 5; pointer-events: none; opacity: 0; transform: scale(.6); }
+.app .toque.vai { animation: toque .9s var(--eva-curva) forwards; }
+@keyframes toque { 0% { opacity: 0; transform: scale(1.4) } 30% { opacity: 1; transform: scale(1) } 55% { transform: scale(.85) } 100% { opacity: 0; transform: scale(1) } }
+
+/* entrada de elementos */
+.app .entra { animation: app-entra .5s var(--eva-curva) both; }
+@keyframes app-entra { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+@media (prefers-reduced-motion: reduce) { .app *, .app *::before { animation: none !important; transition: none !important; } }
+
+/* ---------- telas por fase (S05) ---------- */
+.app svg.ok { width: 20px; height: 20px; stroke: var(--eva-verde-ativo); stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.app .cab-t { justify-content: space-between; } .app .cab-t h4 { margin: 0; font-size: 22px; font-weight: 600; }
+.app .banner-mg { position: relative; border-radius: 16px; padding: 22px 20px; color: #fff; background: linear-gradient(90deg, #D81B60 0%, #CD3976 52%, #FCD7C3 100%); box-shadow: var(--eva-sh-md); }
+.app .banner-mg small { font-weight: 500; font-size: 13px; opacity: .9; } .app .banner-mg h3 { margin: 4px 0 8px; font-size: 30px; font-weight: 700; } .app .banner-mg p { margin: 0; font-size: 13px; max-width: 80%; }
+.app .banner-mg .selo { position: absolute; right: 16px; top: 16px; width: 48px; height: 48px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+.app .banner-mg .selo .ok { width: 26px; height: 26px; }
+.app .lista-ok { background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 6px 14px; }
+.app .lista-ok div { display: flex; gap: 10px; align-items: center; padding: 12px 0; font-size: 14px; border-bottom: 1px solid #EEF2F4; } .app .lista-ok div:last-child { border: 0; }
+.app .ciclo { position: relative; width: 240px; height: 240px; margin: 4px auto 12px; }
+.app .ciclo svg { width: 240px; height: 240px; transform: rotate(-90deg); }
+.app .ciclo-trilho { fill: none; stroke: #F4E3EA; stroke-width: 18; } .app .ciclo-valor { fill: none; stroke: var(--eva-magenta); stroke-width: 18; stroke-linecap: round; transition: stroke-dashoffset 1.4s var(--eva-curva); }
+.app .ciclo > div { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.app .ciclo small { color: var(--eva-texto-suave); font-size: 13px; } .app .ciclo b { font-size: 56px; font-weight: 600; line-height: 1; color: var(--eva-magenta-forte); } .app .ciclo span { font-size: 14px; font-weight: 600; margin-top: 4px; }
+.app .chips-fase { display: flex; gap: 6px; justify-content: center; } .app .chips-fase span { font-size: 11px; padding: 5px 10px; border-radius: 20px; background: #fff; border: 1px solid var(--eva-borda); } .app .chips-fase span.on { background: #FCE8F0; border-color: #F6C6D8; color: var(--eva-magenta-forte); font-weight: 600; }
+.app .banner-sem { display: grid; grid-template-columns: 1fr 120px; align-items: end; border-radius: 16px; background: var(--eva-grad-rosa-pessego); padding: 20px 6px 0 20px; box-shadow: var(--eva-sh-md); overflow: hidden; }
+.app .banner-sem > div { padding-bottom: 18px; } .app .banner-sem small { color: var(--eva-rosa-alerta); font-weight: 500; font-size: 13px; } .app .banner-sem h3 { margin: 2px 0 10px; color: var(--eva-magenta-forte); font-size: 30px; font-weight: 700; }
+.app .banner-sem p { margin: 8px 0 0; font-size: 12px; } .app .banner-sem img { width: 120px; height: auto; display: block; }
+.app .tri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; } .app .tri i { height: 6px; border-radius: 6px; background: #fff; } .app .tri i.on { background: var(--eva-magenta); } .app .tri i.meio { background: linear-gradient(90deg, var(--eva-magenta) 33%, #fff 33%); }
+.app .tri-r { display: grid; grid-template-columns: repeat(3, 1fr); font-size: 9px; color: var(--eva-texto-suave); margin-top: 3px; }
+.app .cards-h { display: grid; grid-template-columns: 1fr .7fr; gap: 10px; }
+.app .card-img { height: 170px; border-radius: 16px; background: var(--eva-azul-escuro) center / cover; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 6px; padding: 14px; color: #fff; font-size: 15px; }
+.app .card-img.azul { background: linear-gradient(180deg, #BBDEEA, #295163); } .app .card-img.grande { height: 200px; } .app .card-img b { font-weight: 700; line-height: 1.15; }
+.app .filtro { display: flex; gap: 8px; padding: 4px 20px 6px; overflow: hidden; background: #fff; }
+.app .filtro span { flex: none; display: grid; justify-items: center; gap: 4px; width: 62px; font-size: 10px; color: var(--eva-texto-suave); }
+.app .filtro img { width: 48px; height: 48px; border-radius: 50%; background: var(--eva-fundo); padding: 4px; border: 2px solid transparent; }
+.app .filtro span.on { color: var(--eva-magenta-forte); font-weight: 600; } .app .filtro span.on img { border-color: var(--eva-magenta); background: #FCE8F0; }
+.app .lista-cont { display: grid; gap: 10px; }
+.app .lista-cont > div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; align-items: center; background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 10px; }
+.app .lista-cont .capa { height: 96px; border-radius: 12px; } .app .lista-cont b { display: block; font-size: 14px; font-weight: 600; margin: 6px 0 2px; line-height: 1.25; } .app .lista-cont small { color: var(--eva-texto-suave); font-size: 11px; }
+.app .capa-rosa { background: linear-gradient(160deg, #FCE8F0, #FCD7C3 60%, #CD3976); } .app .capa-azul { background: linear-gradient(160deg, #E4F5FB, #78C0D7); } .app .capa-salvia { background: linear-gradient(160deg, #FEF9EC, #BCCBB6); }
+.app .etq.curso { background: var(--eva-verde); }
+.app .curso-capa { height: 300px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; color: #fff; background-size: cover; background-position: center; }
+.app .curso-capa.capa-rosa { color: var(--eva-texto); } .app .curso-capa h3 { margin: 6px 0 0; font-size: 26px; font-weight: 700; line-height: 1.12; } .app .curso-capa small { font-size: 12px; opacity: .9; } .app .curso-capa .etq { align-self: flex-start; }
+.app .progresso-curso { display: grid; grid-template-columns: 1fr auto; gap: 6px; font-size: 12px; color: var(--eva-texto-suave); margin-bottom: 14px; } .app .progresso-curso b { color: var(--eva-texto); }
+.app .progresso-curso i { grid-column: 1 / -1; height: 6px; border-radius: 6px; background: #EDEDED; overflow: hidden; } .app .progresso-curso em { display: block; height: 100%; width: calc(var(--f) * 100%); background: var(--eva-verde-ativo); border-radius: 6px; }
+.app .aulas { display: grid; gap: 8px; } .app .aula { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: center; background: #fff; border-radius: 14px; box-shadow: var(--eva-sh-sm); padding: 12px; }
+.app .aula .n { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--eva-fundo); font-weight: 600; font-size: 13px; } .app .aula.feita .n { background: #E8F5E9; } .app .aula.atual { box-shadow: 0 0 0 2px var(--eva-magenta); } .app .aula.atual .n { background: var(--eva-magenta); color: #fff; }
+.app .aula b { display: block; font-size: 13.5px; font-weight: 600; } .app .aula small { font-size: 11px; color: var(--eva-texto-suave); } .app .aula.atual small { color: var(--eva-magenta); font-weight: 600; }
+.app .banner-anjo { display: grid; grid-template-columns: 1fr 110px; align-items: end; border-radius: 16px; background: linear-gradient(90deg, #E4F5FB 0%, #E4F5FB 52%, #BBDEEA 100%); padding: 20px 4px 0 20px; box-shadow: var(--eva-sh-md); overflow: hidden; }
+.app .banner-anjo > div { padding-bottom: 18px; } .app .banner-anjo small { color: var(--eva-azul-medio); font-weight: 600; font-size: 13px; } .app .banner-anjo h3 { margin: 4px 0 8px; color: var(--eva-azul-escuro); font-size: 24px; font-weight: 700; line-height: 1.12; } .app .banner-anjo p { margin: 0; font-size: 12px; } .app .banner-anjo img { width: 110px; height: auto; display: block; }
+.app .roda-mini, .app .roda { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 14px; }
+.app .roda-mini .circ { width: 48px; height: 48px; border-radius: 50%; background: var(--eva-fundo); color: var(--eva-azul-medio); display: grid; place-items: center; } .app .roda-mini b, .app .roda b { display: block; font-size: 15px; font-weight: 600; } .app .roda-mini small, .app .roda small { font-size: 11px; color: var(--eva-magenta); font-weight: 600; }
+.app .roda { grid-template-columns: 1fr auto; margin-bottom: 10px; } .app .roda span:not(.etq):not(.pilula) { font-size: 11px; color: var(--eva-texto-suave); } .app .roda .insc { font-size: 12px; padding: 6px 12px; border-radius: 20px; }
+.app .banner-sal { border-radius: 16px; padding: 22px 20px; background: linear-gradient(90deg, #DAE8EE 0%, #FEF9EC 52%, #BCCBB6 100%); box-shadow: var(--eva-sh-md); } .app .banner-sal h3 { margin: 0 0 6px; font-size: 24px; font-weight: 700; color: var(--eva-verde); } .app .banner-sal p { margin: 0; font-size: 13px; }
+.app .rede { display: flex; align-items: center; background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 14px; } .app .rede span { width: 38px; height: 38px; border-radius: 50%; border: 2px solid #fff; margin-right: -10px; background: linear-gradient(160deg, #FCE8F0, #CD3976); } .app .rede span:nth-child(2) { background: linear-gradient(160deg, #E4F5FB, #78C0D7); } .app .rede span:nth-child(3) { background: linear-gradient(160deg, #FEF9EC, #BCCBB6); } .app .rede span:nth-child(4) { background: linear-gradient(160deg, #FDEBDD, #FE7B02); } .app .rede b { margin-left: 22px; font-size: 13px; font-weight: 600; }

@@ -212,3 +212,51 @@
   .pausa__fecho { margin-top: 32px; text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) { .pausa__fecho { opacity: 1; transform: none; } }
+
+/* ---------- T013 · S05 jornada em capítulos ---------- */
+.secao--jornada { padding-bottom: clamp(48px, 6vw, 80px); }
+.secao--jornada .secao__topo { margin-bottom: 0; }
+.jor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); }
+.jor-passos { list-style: none; margin: 0; padding: 0; }
+.jor-cap { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; gap: 14px; opacity: .3; transition: opacity .45s var(--eva-curva); max-width: 46ch; }
+.jor-cap.on { opacity: 1; }
+.jor-cap:first-child { min-height: 70vh; }
+.jor-fase { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--eva-magenta); }
+.jor-fase img { width: 40px; height: 40px; border-radius: 50%; background: #fff; }
+.jor-cap h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; letter-spacing: -.02em; line-height: 1.1; }
+.jor-cap > p:not(.jor-fase):not(.fonte):not(.aprofundar) { font-size: 18px; color: var(--eva-texto-suave); }
+.jor-palco { position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h)); display: grid; place-items: center; }
+.jor-caixa { display: grid; justify-items: center; gap: 0; }
+.jor-palco .cel { --cel-moldura: var(--eva-texto); width: auto; height: min(600px, calc(100vh - var(--nav-h) - 190px)); aspect-ratio: 9 / 19; padding: 9px; border-radius: 38px; }
+.jor-palco .cel-tela { border-radius: 30px; }
+.jor-tela .app { inset: auto; top: 0; left: 0; width: 393px; height: 852px; transform-origin: 0 0; }
+.jor-palco .etapa { width: 100%; max-width: 300px; }
+.jor-nota { margin-top: 10px; font-size: 11.5px; color: var(--eva-texto-suave); }
+
+/* linha de fases (P-027): 4 fases em linha, perda como desvio */
+.linha-fases { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); width: min(100%, 380px); margin-bottom: 26px; padding-bottom: 22px; }
+.linha-fases::before { content: ""; position: absolute; left: 12.5%; right: 12.5%; top: 6px; height: 2px; background: var(--eva-azul-suave); }
+.linha-fases a { position: relative; display: grid; justify-items: center; gap: 6px; font-size: 11.5px; font-weight: 500; color: var(--eva-texto-suave); text-decoration: none; }
+.linha-fases i { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--eva-azul); transition: transform .3s var(--eva-mola), background .3s, border-color .3s; }
+.linha-fases a.on { color: var(--eva-texto); font-weight: 600; }
+.linha-fases a.on i { background: var(--eva-magenta); border-color: var(--eva-magenta); transform: scale(1.25); }
+.linha-fases a:hover i { transform: scale(1.2); }
+.linha-fases .desvio { position: absolute; left: 50%; top: 34px; transform: translateX(-50%); grid-auto-flow: column; align-items: center; gap: 6px; }
+.linha-fases .desvio::before { content: ""; position: absolute; left: 50%; bottom: 100%; width: 60%; height: 22px; border-left: 2px dashed var(--eva-azul-suave); border-bottom: 0; transform: translateX(-50%) skewX(-30deg); display: none; }
+.linha-fases .guia { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--eva-acento-texto); vertical-align: middle; margin-left: 2px; }
+
+@media (max-width: 900px) {
+  .jor { grid-template-columns: 1fr; gap: 0; }
+  .jor-palco { order: -1; top: var(--nav-h); height: auto; z-index: 3; padding: 8px 0 10px; background: linear-gradient(var(--eva-fundo) 90%, rgba(228, 245, 251, 0)); }
+  .jor-palco .cel { height: calc(44vh - 96px); padding: 5px; border-radius: 22px; }
+  .jor-palco .cel-tela { border-radius: 18px; }
+  .linha-fases { margin-bottom: 8px; padding-bottom: 18px; width: 100%; }
+  .linha-fases a { font-size: 10.5px; }
+  .linha-fases .desvio { top: 30px; }
+  .jor-palco .etapa { margin-top: 6px; padding: 6px 12px 8px; font-size: 11.5px; max-width: 260px; }
+  .jor-nota { display: none; }
+  .jor-cap { min-height: 70vh; justify-content: flex-start; padding-top: 32px; }
+  .jor-cap:first-child { min-height: 60vh; }
+}
+.aprofundar .link-seta { display: inline; }
+.linha-fases a span { white-space: nowrap; }

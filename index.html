@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/tema.css">
 <link rel="stylesheet" href="css/biblioteca.css">
 <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/eva-app.css">
 <link rel="stylesheet" href="css/secoes.css">
 <link rel="preload" as="image" href="assets/video/abertura-poster.webp">
 <script type="module" src="js/main.js"></script>
@@ -177,19 +178,59 @@
 </section>
 
 <!-- S05 · A jornada com a Eva -->
-<section class="secao secao--fundo" id="jornada" aria-labelledby="jornada-titulo">
+<section class="secao secao--fundo secao--jornada" id="jornada" aria-labelledby="jornada-titulo">
   <div class="wrap">
     <div class="secao__topo"><p class="tag">Como funciona</p>
       <h2 id="jornada-titulo">Uma jornada guiada, <b>do jeito de cada fase.</b></h2>
       <p class="lead">Cada colaboradora recebe conteúdos, ferramentas e acompanhamento de acordo com o momento que está vivendo, sempre com especialistas por perto.</p></div>
-    <ol class="capitulos">
-      <li class="capitulo" id="jornada-tentante"><img src="assets/img/fase-tentante.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Tentando engravidar</h3><p>Apoio desde o planejamento, com orientação especializada em cada etapa da tentativa.</p></div></li>
-      <li class="capitulo" id="jornada-gestacao"><img src="assets/img/fase-gestante.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Gestação</h3><p>Acompanhamento, informação confiável e orientação contínua para atravessar a gestação com mais segurança.</p></div></li>
-      <li class="capitulo" id="jornada-pos-parto"><img src="assets/img/fase-puerpera.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Pós-parto e licença</h3><p>Acolhimento emocional, especialistas e conteúdos para a saúde mental, a rotina e a adaptação.</p></div></li>
-      <li class="capitulo" id="jornada-retorno"><img src="assets/img/fase-pos-licenca.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Volta ao trabalho</h3><p>Preparação para o retorno e acompanhamento no primeiro ano, para a colaboradora e o RH.</p><p class="fonte">69% não se sentiam prontas para voltar (Executive Moms).</p></div></li>
-      <li class="capitulo" id="jornada-perda"><img src="assets/img/fase-mae-de-anjo.webp" alt="" width="56" height="56" loading="lazy"><div><h3>Perda gestacional</h3><p>Acolhimento especializado, rodas de conversa com psicóloga perinatal e comunidade, no tempo de cada mulher.</p>
-        <p class="aprofundar"><a class="link-seta" href="https://lutoparental.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=jornada-perda" data-aprofundar="jornada:perda">Guia para o RH: Quando o luto chega ao trabalho <span aria-hidden="true">→</span></a> <span class="etiqueta">e-book + diagnóstico</span></p></div></li>
+  </div>
+  <div class="wrap jor">
+    <ol class="jor-passos">
+        <li class="jor-cap on" data-s="1" id="jornada-tentante">
+          <p class="jor-fase"><img src="assets/img/fase-tentante.webp" alt="" width="40" height="40" loading="lazy">Tentando engravidar</p>
+          <h3>Tentando engravidar</h3>
+          <p>Apoio desde o planejamento, com orientação especializada em cada etapa da tentativa.</p>
+          <p class="fonte">38% de quem passava por tratamentos de fertilidade pensou em sair ou saiu do emprego (Fertility Network UK e Fertifa, Reino Unido).</p>
+        </li>
+        <li class="jor-cap" data-s="2" id="jornada-gestacao">
+          <p class="jor-fase"><img src="assets/img/fase-gestante.webp" alt="" width="40" height="40" loading="lazy">Gestação</p>
+          <h3>Gestação</h3>
+          <p>Acompanhamento, informação confiável e orientação contínua para atravessar a gestação com mais segurança.</p>
+        </li>
+        <li class="jor-cap" data-s="3" id="jornada-pos-parto">
+          <p class="jor-fase"><img src="assets/img/fase-puerpera.webp" alt="" width="40" height="40" loading="lazy">Pós-parto e licença</p>
+          <h3>Pós-parto e licença</h3>
+          <p>Acolhimento emocional, especialistas e conteúdos para a saúde mental, a rotina e a adaptação.</p>
+        </li>
+        <li class="jor-cap" data-s="4" id="jornada-retorno">
+          <p class="jor-fase"><img src="assets/img/fase-pos-licenca.webp" alt="" width="40" height="40" loading="lazy">Volta ao trabalho</p>
+          <h3>Volta ao trabalho</h3>
+          <p>Preparação para o retorno e acompanhamento no primeiro ano, para a colaboradora e o RH.</p>
+          <p class="fonte">69% não se sentiam prontas para voltar ao trabalho depois da licença (Executive Moms).</p>
+        </li>
+        <li class="jor-cap" data-s="5" id="jornada-perda">
+          <p class="jor-fase"><img src="assets/img/fase-mae-de-anjo.webp" alt="" width="40" height="40" loading="lazy">Perda gestacional</p>
+          <h3>Perda gestacional</h3>
+          <p>Acolhimento especializado, rodas de conversa com psicóloga perinatal e comunidade, no tempo de cada mulher.</p>
+          <p class="aprofundar"><a class="link-seta" href="https://lutoparental.evamaternidade.com.br/?utm_source=evamaternidade.com.br&amp;utm_medium=lp&amp;utm_content=jornada-perda" data-aprofundar="jornada:perda">Guia para o RH: Quando o luto chega ao trabalho <span aria-hidden="true">→</span></a> <span class="etiqueta">e-book + diagnóstico</span></p>
+        </li>
     </ol>
+    <div class="jor-palco">
+      <div class="jor-caixa">
+          <nav class="linha-fases" aria-label="Fases da jornada">
+            <a href="#jornada-tentante" data-s="1"><i></i><span>Tentante</span></a>
+            <a href="#jornada-gestacao" data-s="2"><i></i><span>Gestação</span></a>
+            <a href="#jornada-pos-parto" data-s="3"><i></i><span>Pós-parto</span></a>
+            <a href="#jornada-retorno" data-s="4"><i></i><span>Retorno</span></a>
+            <a href="#jornada-perda" data-s="5" class="desvio" title="Pode acontecer em qualquer ponto da jornada · tem guia para o RH"><i></i><span>Perda <b class="guia" aria-label="tem guia para o RH"></b></span></a>
+          </nav>
+        <div class="cel" aria-hidden="true"><div class="cel-tela jor-tela"></div></div>
+        <div class="etapa"><span class="leg"></span><span class="cont"></span><i class="etapa-barra"></i></div>
+        <p class="jor-nota">Telas ilustrativas do app, com dados fictícios.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
     <p class="secao__acoes"><a class="btn" href="#agendar" data-origem="jornada">Agendar conversa</a></p>
   </div>
 </section>

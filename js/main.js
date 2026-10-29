@@ -5,6 +5,7 @@ import { marcarTitulos } from './lib/traco.js';
 import { formularios } from './formulario.js';
 import { abertura } from './abertura.js';
 import { problema, origem, pausa } from './secoes.js';
+import { jornada } from './jornada.js';
 
 const nav = $('.nav');
 const dl = (window.dataLayer = window.dataLayer || []);
@@ -120,3 +121,6 @@ abertura();
 problema();
 origem();
 pausa();
+
+/* ---------- T013 · S05 jornada ---------- */
+jornada();

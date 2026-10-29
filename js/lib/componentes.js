@@ -254,10 +254,10 @@ export function sobreposicao(secao, antes, depois, { aoFim, recuo = .9 } = {}) {
 /* P-024 · Vitrine de casos com escolha por clique (abas acessíveis).
    abas: botões; paineis: elementos do celular/descrição por caso (mesma ordem);
    historias: [microHistoria...] por caso. Setas ←/→/↑/↓, Home/End navegam.
-   avancar: ms para avanço automático (0 = desligado, como na referência). */
+   avancar: ms para avanço automático (0 = desligado, como na referência); para de vez no primeiro clique ou tecla. */
 export function vitrine(lista, abas, paineis, historias, { avancar = 0 } = {}) {
   lista.setAttribute('role', 'tablist');
-  let atual = -1, tm;
+  let atual = -1, tm, manual = false;
   const seleciona = (i, foco = false) => {
     if (i === atual) return;
     if (atual >= 0) historias[atual]?.parar();
@@ -266,16 +266,16 @@ export function vitrine(lista, abas, paineis, historias, { avancar = 0 } = {}) {
     paineis.forEach(grupo => grupo.forEach((p, k) => { p.hidden = k !== i; }));
     historias[i]?.tocar();
     if (foco) abas[i].focus();
-    clearTimeout(tm); if (avancar && !reduz) tm = setTimeout(() => seleciona((i + 1) % abas.length), avancar);
+    clearTimeout(tm); if (avancar && !reduz && !manual) tm = setTimeout(() => seleciona((i + 1) % abas.length), avancar);
   };
   abas.forEach((a, k) => {
     a.setAttribute('role', 'tab');
     const id = a.id || (a.id = 'aba-' + Math.random().toString(36).slice(2, 8));
     paineis.forEach(grupo => { grupo[k].setAttribute('role', 'tabpanel'); grupo[k].setAttribute('aria-labelledby', id); });
-    a.addEventListener('click', () => seleciona(k));
+    a.addEventListener('click', () => { manual = true; seleciona(k); });
     a.addEventListener('keydown', e => {
       const n = abas.length, mapa = { ArrowDown: k + 1, ArrowRight: k + 1, ArrowUp: k - 1, ArrowLeft: k - 1, Home: 0, End: n - 1 };
-      if (e.key in mapa) { e.preventDefault(); seleciona((mapa[e.key] + n) % n, true); }
+      if (e.key in mapa) { e.preventDefault(); manual = true; seleciona((mapa[e.key] + n) % n, true); }
     });
   });
   aoVer(lista, () => seleciona(0), .3);

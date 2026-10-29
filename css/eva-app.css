@@ -151,3 +151,28 @@
 .app .roda { grid-template-columns: 1fr auto; margin-bottom: 10px; } .app .roda span:not(.etq):not(.pilula) { font-size: 11px; color: var(--eva-texto-suave); } .app .roda .insc { font-size: 12px; padding: 6px 12px; border-radius: 20px; }
 .app .banner-sal { border-radius: 16px; padding: 22px 20px; background: linear-gradient(90deg, #DAE8EE 0%, #FEF9EC 52%, #BCCBB6 100%); box-shadow: var(--eva-sh-md); } .app .banner-sal h3 { margin: 0 0 6px; font-size: 24px; font-weight: 700; color: var(--eva-verde); } .app .banner-sal p { margin: 0; font-size: 13px; }
 .app .rede { display: flex; align-items: center; background: #fff; border-radius: 16px; box-shadow: var(--eva-sh-sm); padding: 14px; } .app .rede span { width: 38px; height: 38px; border-radius: 50%; border: 2px solid #fff; margin-right: -10px; background: linear-gradient(160deg, #FCE8F0, #CD3976); } .app .rede span:nth-child(2) { background: linear-gradient(160deg, #E4F5FB, #78C0D7); } .app .rede span:nth-child(3) { background: linear-gradient(160deg, #FEF9EC, #BCCBB6); } .app .rede span:nth-child(4) { background: linear-gradient(160deg, #FDEBDD, #FE7B02); } .app .rede b { margin-left: 22px; font-size: 13px; font-weight: 600; }
+
+/* ---------- telas dos casos (S06) ---------- */
+.app .cab-chat .av.eva { background: var(--eva-azul); color: #fff; }
+.app .chat { display: flex; flex-direction: column; gap: 10px; padding: 18px 16px; }
+.app .bal { max-width: 82%; padding: 12px 14px; border-radius: 18px; font-size: 14px; line-height: 1.4; box-shadow: var(--eva-sh-sm); }
+.app .bal.ela { align-self: flex-end; background: var(--eva-magenta); color: #fff; border-bottom-right-radius: 6px; }
+.app .bal.eva { align-self: flex-start; background: #fff; border-bottom-left-radius: 6px; }
+.app .bal .opcoes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.app .bal .opcoes span { font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 20px; border: 1.5px solid var(--eva-magenta); color: var(--eva-magenta); }
+.app .bal .opcoes span.on { background: var(--eva-magenta); color: #fff; }
+.app .bal.digit { display: flex; gap: 4px; padding: 14px; }
+.app .bal.digit i { width: 7px; height: 7px; border-radius: 50%; background: var(--eva-azul); animation: digit 1s infinite; }
+.app .bal.digit i:nth-child(2) { animation-delay: .15s; } .app .bal.digit i:nth-child(3) { animation-delay: .3s; }
+@keyframes digit { 0%, 60%, 100% { opacity: .3; transform: none } 30% { opacity: 1; transform: translateY(-3px) } }
+.app .dias { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.app .dias span { display: grid; justify-items: center; gap: 2px; padding: 10px 0; border-radius: 14px; background: #fff; box-shadow: var(--eva-sh-sm); }
+.app .dias small { font-size: 11px; color: var(--eva-texto-suave); } .app .dias b { font-size: 18px; font-weight: 600; }
+.app .dias span.on { background: var(--eva-magenta); color: #fff; } .app .dias span.on small { color: #fff; }
+.app .horas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.app .horas span { text-align: center; padding: 10px 0; border-radius: 12px; background: #fff; border: 1.5px solid var(--eva-borda); font-size: 13px; font-weight: 600; transition: background .3s, color .3s, border-color .3s; }
+.app .horas span.on { background: var(--eva-magenta); border-color: var(--eva-magenta); color: #fff; }
+.app .agendada { margin: 20px; padding: 28px 20px; border-radius: 24px; background: var(--eva-grad-rosa-pessego); text-align: center; display: grid; justify-items: center; gap: 6px; }
+.app .agendada .selo-ok { width: 64px; height: 64px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+.app .agendada .selo-ok .ok { width: 34px; height: 34px; }
+.app .agendada h3 { margin: 6px 0 0; font-size: 24px; font-weight: 700; color: var(--eva-magenta-forte); } .app .agendada p { margin: 0; font-size: 13px; }

@@ -6,6 +6,7 @@ import { formularios } from './formulario.js';
 import { abertura } from './abertura.js';
 import { problema, origem, pausa } from './secoes.js';
 import { jornada } from './jornada.js';
+import { emAcao } from './emacao.js';
 
 const nav = $('.nav');
 const dl = (window.dataLayer = window.dataLayer || []);
@@ -124,3 +125,6 @@ pausa();
 
 /* ---------- T013 · S05 jornada ---------- */
 jornada();
+
+/* ---------- T014 · S06 em ação ---------- */
+emAcao();

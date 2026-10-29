@@ -260,3 +260,33 @@
 }
 .aprofundar .link-seta { display: inline; }
 .linha-fases a span { white-space: nowrap; }
+
+/* ---------- T014 · S06 vitrine (P-024) ---------- */
+.em-acao { background: var(--eva-grad-azul); }
+.vit { --vit-cartao: #fff; --vit-cartao-texto: var(--eva-texto); align-items: center; }
+.vit-lista { box-shadow: var(--eva-sombra-alta); padding: 28px 16px 20px; gap: 6px; }
+.vit-lista h2 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); padding: 0 14px 10px; }
+.vit-lista nav { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.vit-lista [role=tab] { font-weight: 600; font-size: 16px; display: block; }
+.vit-lista [role=tab] small { font-family: var(--eva-fonte); letter-spacing: .04em; text-transform: none; font-weight: 500; font-size: 12.5px; color: var(--eva-texto-suave); opacity: 1; }
+.vit-lista [role=tab][aria-selected=true] { background: var(--eva-fundo); box-shadow: inset 3px 0 0 var(--eva-magenta); }
+.vit-celular { display: grid; justify-items: center; }
+.vit-celular .cel { --cel-moldura: var(--eva-texto); width: auto; height: min(600px, 72vh); aspect-ratio: 9 / 19; padding: 9px; border-radius: 38px; }
+.vit-celular .cel-tela { border-radius: 30px; }
+.vit-tela .app { inset: auto; top: 0; left: 0; width: 393px; height: 852px; transform-origin: 0 0; }
+.vit-celular .etapa { max-width: 300px; }
+.vit-desc [role=tabpanel] { border-left: 2px solid var(--eva-texto); padding-left: 20px; }
+.vit-desc h3 { font-size: 20px; margin-bottom: 10px; }
+.vit-desc p { font-size: 16px; }
+.vit-rh { margin-top: 16px; font-size: 14px !important; color: var(--eva-texto-suave); }
+.vit-rh b { color: var(--eva-texto); font-weight: 600; }
+@media (max-width: 900px) {
+  .vit-lista { box-shadow: var(--eva-sombra); padding: 20px 8px 14px; flex-direction: column; overflow: visible; scroll-snap-type: none; }
+  .vit-lista h2 { padding: 0 8px 8px; }
+  .vit-lista nav { flex-direction: row; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .vit-lista [role=tab] { flex: 0 0 auto; white-space: nowrap; font-size: 14.5px; }
+  .vit-lista .btn { display: none; }
+  .vit-celular .cel { height: min(520px, 62vh); }
+  .vit-desc [role=tabpanel] { padding-left: 16px; }
+}
+@media (max-width: 900px) { .vit { grid-template-columns: minmax(0, 1fr); } .vit-lista, .vit-celular, .vit-desc { min-width: 0; } }
